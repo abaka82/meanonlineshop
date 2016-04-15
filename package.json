@@ -29,6 +29,7 @@
     "socketio-jwt": "^4.2.0",
     "serve-favicon": "^2.3.0",
     
+    "bower": "~1.7.7",
     "grunt-cli": "~0.1.13",
     "autoprefixer": "^6.0.0",
     "babel-core": "^6.6.5",
