@@ -1,4 +1,4 @@
-<header class="hero-unit" id="banner">
+<!--<header class="hero-unit" id="banner">
   <div class="container">
     <h1>'Allo, 'Allo!</h1>
     <p class="lead">Kick-start your next web app with Angular Fullstack</p>
@@ -26,3 +26,97 @@
     </p>
   </form>
 </div>
+-->
+
+
+<!-- Wrapper-->
+<div id="wrapper">
+
+    <!-- Navigation -->
+   <!-- <div ng-include="'navigation.html'"></div> -->
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="profile-element" uib-dropdown>
+                    <a uib-dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">{{main.userName}}</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul uib-dropdown-menu class="animated flipInX m-t-xs">
+                        <li><a href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="index.main"><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+    <!-- Page wraper -->
+    <!-- ng-class with current state name give you the ability to extended customization your view -->
+    <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+
+        <!-- Page wrapper -->
+      <!--  <div ng-include="'topnavbar.html'"></div> -->
+
+<div class="row border-bottom">
+    <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <span minimaliza-sidebar></span>
+            <form role="search" class="navbar-form-custom" method="post" action="">
+                <div class="form-group">
+                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                </div>
+            </form>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <a href="">
+                    <i class="fa fa-sign-out"></i> Log out
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+
+        <!-- Main view  -->
+        <div ui-view></div>
+
+        <!-- Footer -->
+      <!--  <div ng-include="'footer.html'"></div> -->
+
+<div class="footer">
+    <div class="pull-right">
+        10GB of <strong>250GB</strong> Free.
+    </div>
+    <div>
+        <strong>Copyright</strong> Example Company &copy; 2014-2015
+    </div>
+</div>
+
+
+    </div>
+    <!-- End page wrapper-->
+
+</div>
+<!-- End wrapper-->

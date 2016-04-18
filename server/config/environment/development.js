@@ -6,7 +6,7 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://test:test@ds011271.mlab.com:11271/meanonlineshop'
+    uri: 'mongodb://localhost/meanonlineshop-dev'
   },
 
   // Seed database on startup

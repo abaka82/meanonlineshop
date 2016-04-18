@@ -9,7 +9,8 @@ angular.module('meanonlineshopApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'validation.match'
+  'validation.match',
+  'ui.bootstrap',                 // Ui Bootstrap
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
