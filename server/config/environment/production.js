@@ -19,6 +19,6 @@ module.exports = {
           process.env.MONGOHQ_URL ||
           process.env.OPENSHIFT_MONGODB_DB_URL +
           process.env.OPENSHIFT_APP_NAME ||
-          'mongodb://localhost/meanonlineshop'
+          'mongodb://test:test@ds011271.mlab.com:11271/meanonlineshop'
   }
 };
