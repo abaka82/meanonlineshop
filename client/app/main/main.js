@@ -2,16 +2,21 @@
 
 angular.module('meanonlineshopApp')
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/index/main");
+    $urlRouterProvider.otherwise("/login");
     
     $stateProvider
       .state('index', {
-                    abstract: true,
+            abstract: true,
             url: "/index",
-       // url: '/',
-        template: '<main></main>',
-//templateUrl: "main.html",
-      })
+            template: '<main></main>',
+        })
+       .state('login', {
+            url: "/login",
+            templateUrl: "app/account/login/login.html",
+            data: { pageTitle: 'Login', specialClass: 'gray-bg' },
+            controller: 'LoginController',
+            controllerAs: 'vm'
+        })
       .state('index.main', {
             url: "/main",
             templateUrl: "content.html",
