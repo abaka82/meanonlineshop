@@ -35,6 +35,8 @@ class MainController {
 
 angular.module('meanonlineshopApp')
   .component('main', {
+                        abstract: true,
+            url: "/index",
     templateUrl: 'app/main/main.html',
     controller: MainController
   });
