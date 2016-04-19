@@ -6,7 +6,8 @@ var user;
 var genUser = function() {
   user = new User({
     provider: 'local',
-    name: 'Fake User',
+    firstname: 'Fake User',
+    lastname: 'last',
     email: 'test@example.com',
     password: 'password'
   });
