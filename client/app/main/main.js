@@ -8,7 +8,8 @@ angular.module('meanonlineshopApp')
       .state('index', {
             url: "/index",
             templateUrl: "views/common/content.html",
-            data: { pageTitle: 'Example view' }
+            data: { pageTitle: 'Example view' },
+            authenticate: true
         })
       
       ////// Auth state ///////  
@@ -48,11 +49,13 @@ angular.module('meanonlineshopApp')
            // abstract: true,
             url: "/main",
             template: '<main></main>',
+            authenticate: true
         })
       .state('index.minor', {
             url: "/minor",
             templateUrl: "minor.html",
-            data: { pageTitle: 'Example view' }
+            data: { pageTitle: 'Example view' },
+            authenticate: true
         });
   })
   
