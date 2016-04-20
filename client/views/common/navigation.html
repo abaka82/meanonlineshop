@@ -9,15 +9,25 @@
                                 <span class="block m-t-xs">
                                     <strong class="font-bold" ng-show="nav.isLoggedIn()">Welcome, {{nav.getCurrentUser().firstname}} {{nav.getCurrentUser().lastname}}</strong>
                              </span>
-                                <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
+                               <span class="text-muted text-xs block">Account settings<b class="caret"></b></span>
                             </span>
                     </a>
                     <ul uib-dropdown-menu class="animated flipInX m-t-xs">
-                        <li><a ui-sref="login">Logout</a></li>
+                        <li><a ui-sref="login">Edit Profile</a></li>
+                        <li><a ui-sref="index.settings">Change Password</a></li>
+                        <li><a ui-sref="logout">Logout</a></li>
                     </ul>
                 </div>
-                <div class="logo-element">
-                    IN+
+
+                <div class="logo-element glyphicon glyphicon-cog profile-element" uib-dropdown>
+                  <a uib-dropdown-toggle href>
+                     <span class="text-muted text-xs block"><b class="caret"></b></span>
+                   </a>
+                   <ul uib-dropdown-menu class="animated flipInX m-t-xs" style="color:gray;word-spacing: -10px">
+                        <li><a ui-sref="login">Edit Profile</a></li>
+                        <li><a ui-sref="index.settings">Change Password</a></li>
+                        <li><a ui-sref="logout">Logout</a></li>
+                    </ul>
                 </div>
 
             </li>
@@ -26,17 +36,60 @@
                 <a ui-sref="index.main"><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
             </li>
             <li ui-sref-active="active">
-                <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
-            </li>
-            <li ui-sref-active="active">
-                <a ui-sref="index.settings"><i class="fa fa-desktop"></i> <span class="nav-label">Change password</span></a>
+                <a ui-sref="index.minor"><i class="fa fa-desktop"></i> <span class="nav-label">Admin page</span><span class="fa arrow"></span></a>
+                 <ul class="nav nav-second-level collapse">
+                     <li>
+                        <a href="">User<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="">Create User</a>
+                            </li>
+                            <li>
+                                <a href="">Edit User</a>
+                            </li>
+                            <li>
+                                <a href="">User list</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Products<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="">Create Category</a>
+                            </li>
+                             <li>
+                                <a href="">Category List</a>
+                            </li>
+                            <li>
+                                <a href="">Create Products</a>
+                            </li>
+                            <li>
+                                <a href="">Edit Products</a>
+                            </li>
+                              <li>
+                                <a href="">Products List</a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="">Orders<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="">Order List</a>
+                            </li>
+                             <li>
+                                <a href="">Order Confirmation</a>
+                            </li>
+                        </ul>
+                    </li>
+                 </ul>
             </li>
              <li ui-sref-active="active" ng-show="nav.isLoggedIn()">
                 <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-Commerce</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('commerce')}">
                     <li ui-sref-active="active"><a ui-sref="index.products_grid">Products grid</a></li>
                     <li ui-sref-active="active"><a ui-sref="index.product_list">Products list</a></li>
-                    <li ui-sref-active="active"><a ui-sref="index.product">Product edit</a></li>
                     <li ui-sref-active="active"><a ui-sref="index.product_details">Product detail</a></li>
                     <li ui-sref-active="active"><a ui-sref="index.cart">Cart</a></li>
                     <li ui-sref-active="active"><a ui-sref="index.orders">Orders</a></li>
