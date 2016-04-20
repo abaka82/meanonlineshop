@@ -7,6 +7,7 @@ angular.module('meanonlineshopApp')
     $stateProvider
       .state('index', {
             url: "/index",
+            abstract: true,
             templateUrl: "views/common/content.html",
             data: { pageTitle: 'Example view' },
             authenticate: true
@@ -54,30 +55,41 @@ angular.module('meanonlineshopApp')
       .state('index.minor', {
             url: "/minor",
             templateUrl: "minor.html",
-            data: { pageTitle: 'Example view' }
+            data: { pageTitle: 'Example view' },
+            authenticate: true
         })
 
       /////// Commerce state //////////
-       .state('index.products_grid', {
+       .state('commerce', {
+            abstract: true,
+            url: "/commerce",
+            templateUrl: "views/common/content.html",
+            authenticate: true
+        })
+       .state('commerce.products_grid', {
             url: "/products_grid",
             templateUrl: "views/commerce/ecommerce_products_grid.html",
-            data: { pageTitle: 'E-commerce grid' }
+            data: { pageTitle: 'E-commerce grid' },
+            authenticate: true
         })
-        .state('index.product_list', {
+        .state('commerce.product_list', {
             url: "/product_list",
             templateUrl: "views/commerce/ecommerce_product_list.html",
-            data: { pageTitle: 'E-commerce product list' }
+            data: { pageTitle: 'E-commerce product list' },
+            authenticate: true
         })
-        .state('index.orders', {
+        .state('commerce.orders', {
             url: "/orders",
             templateUrl: "views/commerce/ecommerce_orders.html",
-            data: { pageTitle: 'E-commerce orders' }
+            data: { pageTitle: 'E-commerce orders' },
+            authenticate: true
         })
-        .state('index.product', {
+        .state('commerce.product', {
             url: "/product",
             templateUrl: "views/commerce/ecommerce_product.html",
             data: { pageTitle: 'Product edit' },
-            resolve: {
+            authenticate: true
+           /* resolve: {
                 loadPlugin: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {
@@ -89,14 +101,15 @@ angular.module('meanonlineshopApp')
                         }
                     ]);
                 }
-            }
+            }*/
 
         })
-        .state('index.product_details', {
+        .state('commerce.product_details', {
             url: "/product_details",
             templateUrl: "views/commerce/ecommerce_product_details.html",
             data: { pageTitle: 'E-commerce Product detail' },
-            resolve: {
+            authenticate: true
+           /* resolve: {
                 loadPlugin: function ($ocLazyLoad) {
                     return $ocLazyLoad.load([
                         {
@@ -108,17 +121,19 @@ angular.module('meanonlineshopApp')
                         }
                     ]);
                 }
-            }
+            }*/
         })
-        .state('index.payments', {
+        .state('commerce.payments', {
             url: "/payments",
             templateUrl: "views/commerce/ecommerce_payments.html",
-            data: { pageTitle: 'E-commerce payments' }
+            data: { pageTitle: 'E-commerce payments' },
+            authenticate: true
         })
-        .state('index.cart', {
+        .state('commerce.cart', {
             url: "/cart",
             templateUrl: "views/commerce/ecommerce_cart.html",
-            data: { pageTitle: 'Shopping cart' }
+            data: { pageTitle: 'Shopping cart' },
+            authenticate: true
         });
   })
   
