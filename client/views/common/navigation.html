@@ -3,17 +3,17 @@
         <ul side-navigation class="nav metismenu" id="side-menu">
             <li class="nav-header">
 
-                <div class="profile-element" uib-dropdown>
+                <div class="profile-element" uib-dropdown ng-controller=" NavbarController as nav ">
                     <a uib-dropdown-toggle href>
                             <span class="clear">
                                 <span class="block m-t-xs">
-                                    <strong class="font-bold">{{Auth.getCurrentUser.name}}</strong>
+                                    <strong class="font-bold" ng-show="nav.isLoggedIn()">Welcome, {{nav.getCurrentUser().firstname}} {{nav.getCurrentUser().lastname}}</strong>
                              </span>
                                 <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
                             </span>
                     </a>
                     <ul uib-dropdown-menu class="animated flipInX m-t-xs">
-                        <li><a ui-sref="logout">Logout</a></li>
+                        <li><a ui-sref="login">Logout</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
