@@ -6,21 +6,14 @@ angular.module('meanonlineshopApp')
     
     $stateProvider
       .state('index', {
-            abstract: true,
             url: "/index",
-            template: '<main></main>',
-        })
-       .state('login', {
-            url: "/login",
-            templateUrl: "app/account/login/login.html",
-            data: { pageTitle: 'Login', specialClass: 'gray-bg' },
-            controller: 'LoginController',
-            controllerAs: 'vm'
+            templateUrl: "views/common/content.html",
+            data: { pageTitle: 'Example view' }
         })
       .state('index.main', {
+           // abstract: true,
             url: "/main",
-            templateUrl: "content.html",
-            data: { pageTitle: 'Example view' }
+            template: '<main></main>',
         })
       .state('index.minor', {
             url: "/minor",

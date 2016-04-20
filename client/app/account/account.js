@@ -3,20 +3,20 @@
 angular.module('meanonlineshopApp')
   .config(function($stateProvider) {
     $stateProvider
-      .state('login2', {
-        url: '/login2',
+      .state('login', {
+        url: '/login',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginController',
         controllerAs: 'vm'
       })
       .state('logout', {
         url: '/logout?referrer',
-        referrer: 'main',
-        template: '',
+        referrer: 'login',
+      //  template: '',
         controller: function($state, Auth) {
           var referrer = $state.params.referrer ||
                           $state.current.referrer ||
-                          'main';
+                          'login';
           Auth.logout();
           $state.go(referrer);
         }
@@ -27,7 +27,7 @@ angular.module('meanonlineshopApp')
         controller: 'SignupController',
         controllerAs: 'vm'
       })
-      .state('settings', {
+      .state('index.settings', {
         url: '/settings',
         templateUrl: 'app/account/settings/settings.html',
         controller: 'SettingsController',
