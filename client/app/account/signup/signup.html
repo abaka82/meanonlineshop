@@ -53,12 +53,12 @@
                                             'has-error': form.password.$invalid && vm.submitted }">
           
           <input type="password" name="password" placeholder="Password"  class="form-control" ng-model="vm.user.password"
-                 ng-minlength="3"
+                 ng-minlength="6"
                  required
                  mongoose-error/>
           <p class="help-block"
              ng-show="(form.password.$error.minlength || form.password.$error.required) && vm.submitted">
-            Password must be at least 3 characters.
+            Password must be at least 6 characters.
           </p>
           <p class="help-block" ng-show="form.password.$error.mongoose">
             {{ vm.errors.password }}
@@ -69,7 +69,7 @@
                                             'has-error': form.confirmPassword.$invalid && vm.submitted }">
           <input type="password" name="confirmPassword" placeholder="Confirm Password"  class="form-control" ng-model="vm.user.confirmPassword"
                  match="vm.user.password"
-                 ng-minlength="3" required/>
+                 ng-minlength="6" required/>
           <p class="help-block"
              ng-show="form.confirmPassword.$error.match && vm.submitted">
             Passwords must match.

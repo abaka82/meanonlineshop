@@ -2,7 +2,7 @@
 
 (function() {
 
-function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
+function AuthService($location, $http, $cookies, $q, appConfig, Util, User, toastr) {
   var safeCb = Util.safeCb;
   var currentUser = {};
   var userRoles = appConfig.userRoles || [];
@@ -32,11 +32,13 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
         })
         .then(user => {
           safeCb(callback)(null, user);
+          toastr.success('Welcome to MEAN online store!', 'Login as '+currentUser.firstname);
           return user;
         })
         .catch(err => {
           Auth.logout();
           safeCb(callback)(err.data);
+          toastr.error(err.data.message, 'Error');
           return $q.reject(err.data);
         });
     },
@@ -61,10 +63,12 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
         function(data) {
           $cookies.put('token', data.token);
           currentUser = User.get();
+          toastr.success('Successfully create user');
           return safeCb(callback)(null, user);
         },
         function(err) {
           Auth.logout();
+          toastr.error(err.data.name, 'Error in creating user');
           return safeCb(callback)(err);
         }).$promise;
     },
@@ -82,8 +86,10 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
         oldPassword: oldPassword,
         newPassword: newPassword
       }, function() {
+        toastr.success('Password successfully changed for ' + currentUser.firstname);
         return safeCb(callback)(null);
       }, function(err) {
+        toastr.error(err.data.name, 'Error in changing password');
         return safeCb(callback)(err);
       }).$promise;
     },
