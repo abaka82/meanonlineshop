@@ -11,6 +11,7 @@ angular.module('meanonlineshopApp', [
   'ui.router',
   'validation.match',
   'ui.bootstrap',                 // Ui Bootstrap
+  'toastr'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
