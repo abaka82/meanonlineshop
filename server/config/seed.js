@@ -6,8 +6,17 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import Product from '../api/product/product.model';
 
-Thing.find({}).remove()
+
+Product.find({}).remove()
+  .then(() => {
+    Product.create({
+      Title: 'Tes'
+    });
+  });
+
+/*Thing.find({}).remove()
   .then(() => {
     Thing.create({
       name: 'Development Tools',
@@ -37,7 +46,7 @@ Thing.find({}).remove()
       info: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
              'and openshift subgenerators'
     });
-  });
+  });*/
 
 /*User.find({}).remove()
   .then(() => {
