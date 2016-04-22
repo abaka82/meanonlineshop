@@ -46,14 +46,14 @@ describe('Product API:', function() {
       request(app)
         .post('/api/products')
         .send({
-		  Title: 'New Product',
-		  Author: 'Andry Baka',
-		  Description: 'This is a new book',
-		  Category: 'Book',
-		  Image: 'xxx',
-		  Price: 123,
-		  Stock: 5,
-		  Status: 'Ready'
+      		  Title: 'New Product',
+      		  Author: 'Andry Baka',
+      		  Description: 'This is a new book',
+      		  Category: 'Book',
+      		  Image: 'xxx',
+      		  Price: 123,
+      		  Stock: 5,
+      		  Status: 'Ready'
         })
         .expect(201)
         .expect('Content-Type', /json/)

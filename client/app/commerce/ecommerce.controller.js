@@ -3,40 +3,53 @@
 (function() {
 
 class EcommerceController {
+ newProduct = {};
+  
 
-  constructor($http, $scope, socket) {
+  constructor($http, $scope, $state, $uibModal,$timeout) {
     this.$http = $http;
-    this.socket = socket;
-    this.awesomeProducts = [];
-
-    $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('product');
-    });
+    this.$state = $state;
+    this.$uibModal = $uibModal;
+    this.$timeout = $timeout;
   }
 
-  $onInit() {
-    this.$http.get('/api/products').then(response => {
-      this.awesomeProducts = response.data;
-      this.socket.syncUpdates('product', this.awesomeProducts);
-    });
-  }
+	addProduct(form) {
+  	
+   // if (this.newProduct) {
+   		console.log(this.newProduct.title);
+   		console.log(form);
+        this.$http.post('/api/products', 
+      	{
+      	Title: this.newProduct.title,
+      	Author: this.newProduct.author,
+  			Description: this.newProduct.description,
+  			Category: this.newProduct.category,
+  			Image: this.newProduct.image,
+  			Price: this.newProduct.price,
+  			Stock: this.newProduct.stock,
+  			Status: this.newProduct.status
+      	});
+   		this.newProduct = {};
+   // }
+ 	}
 
-  addProduct() {
-    if (this.newProduct) {
-      this.$http.post('/api/product', { Id: guid(), Title: this.newProduct });
-      this.newProduct = '';
-    }
-  }
+ // deleteThing(thing) {
+ //   this.$http.delete('/api/product/' + product._id);
+ // }
 
-  deleteThing(thing) {
-    this.$http.delete('/api/product/' + product._id);
-  }
+ /**
+ * modalDemoCtrl - Controller used to run modal view
+ * used in Basic form view
+ */
+ 
+ DialogDemoCtrl($scope, $timeout, $dialog){
+    $timeout(function(){
+      $dialog.dialog({}).open('views/common/modal_example.html');  
+    }, 3000);  
+   }
 }
 
 angular.module('meanonlineshopApp')
-  .component('productList', {
-    templateUrl: 'app/commerce/commerce_product_list.html',
-    controller: EcommerceController
-  });
+  .controller('EcommerceController', EcommerceController);
 
 })();

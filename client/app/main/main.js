@@ -74,10 +74,9 @@ angular.module('meanonlineshopApp')
         })
         .state('commerce.product_list', {
             url: "/product_list",
-            template: '<productList></productList>',
-           // templateUrl: "app/commerce/ecommerce_product_list.html",
-           // controller: 'EcommerceController',
-           // controllerAs: 'ec',
+             templateUrl: "app/commerce/ecommerce_product_list.html",
+             controller: 'EcommerceController',
+             controllerAs: 'ec',
             //data: { pageTitle: 'E-commerce product list' },
             authenticate: true
         })
@@ -149,8 +148,9 @@ angular.module('meanonlineshopApp')
   });
 
 
+
 angular
     .module('meanonlineshopApp')
-    .run(function($rootScope, $state) {
+    .run(function($rootScope, $state, '$timeout') {
         $rootScope.$state = $state;
     });

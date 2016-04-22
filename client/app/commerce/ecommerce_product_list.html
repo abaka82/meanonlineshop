@@ -18,15 +18,88 @@
     </div>
 </div>
 
-<form class="thing-form">
-    <label>Syncs in realtime across clients</label>
+<form class="thing-form" name="form" ng-submit="ec.addProduct(form)">
+   <!-- <label>Syncs in realtime across clients</label>
     <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new product here." ng-model="$ctrl.newProduct">
+      <input type="text" class="form-control" name="title" placeholder="Add a new product here." ng-model="ec.newProduct.title">
       <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="$ctrl.addProduct()">Add New</button>
+      
       </span>
-    </p>
+    </p>-->
+
+    <div class="ibox-content m-b-sm border-bottom">
+           <div>
+                <div class="form-group">
+                    <label class="control-label" for="product_name">Product Name</label>
+                    <input type="text" id="NewProduct"  name="NewProduct" value="" placeholder="Add a new product here." class="form-control" ng-model="ec.newProduct.title">
+                </div>
+            </div>
+            <div >
+                <div class="form-group">
+                    <label class="control-label" for="Author">Author</label>
+                    <input type="text" id="Author" name="Author" value="" placeholder="Author" class="form-control" ng-model="ec.newProduct.author">
+                </div>
+            </div>
+            <div >
+                <div class="form-group">
+                    <label class="control-label" for="Description">Description</label>
+                    <input type="text" id="Description" name="Description" value="" placeholder="Description" class="form-control" ng-model="ec.newProduct.description">
+                </div>
+            </div>
+            <div >
+                <div class="form-group">
+                    <label class="control-label" for="Category">Category</label>
+                      <input type="text" id="Category" name="Category" value="" placeholder="Category" class="form-control" ng-model="ec.newProduct.category">
+                </div>
+            </div>
+             <div >
+                <div class="form-group">
+                    <label class="control-label" for="Image">Image</label>
+                      <input type="text" id="Image" name="Image" value="" placeholder="Image" class="form-control" ng-model="ec.newProduct.image">
+                      
+                </div>
+            </div>
+             <div >
+                <div class="form-group">
+                    <label class="control-label" for="Price">Price</label>
+                      <input type="text" id="Price" name="Price" value="" placeholder="Price" class="form-control" ng-model="ec.newProduct.price">
+                </div>
+            </div>
+             <div >
+                <div class="form-group">
+                    <label class="control-label" for="Stock">Stock</label>
+                      <input type="text" id="Stock" name="Stock" value="" placeholder="Stock" class="form-control" ng-model="ec.newProduct.stock">
+                </div>
+            </div>
+             <div >
+                <div class="form-group">
+                    <label class="control-label" for="status">Status</label>
+                    <select name="status" id="status" class="form-control" ng-model="ec.newProduct.status">
+                        <option value="Enabled" selected>Enabled</option>
+                        <option value="Disabled">Disabled</option>
+                    </select>
+                </div>
+            </div>
+    <button type="submit" class="btn btn-primary" >Add New</button>
+    </div>
   </form>
+  
+  <div class="ibox-content">
+                    <div class="text-center">
+                        <button class="btn btn-primary" ng-click="ec.DialogDemoCtrl()">Form in simple modal box</button>
+                    </div>
+  </div>
+
+     <div class="btn btn-primary" uib-dropdown> Add New
+                  <a uib-dropdown-toggle href>
+                     <span class="text-muted text-xs block"><b class="caret"></b></span>
+                   </a>
+                   <ul uib-dropdown-menu class="animated flipInX m-t-xs" style="color:gray;word-spacing: -10px">
+                        <li><a ui-sref="login">Edit Profile</a></li>
+                        <li><a ui-sref="index.settings">Change Password</a></li>
+                        <li><a ui-sref="logout">Logout</a></li>
+                    </ul>
+     </div>
 
 
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
