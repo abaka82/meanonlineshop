@@ -16,9 +16,15 @@ class SettingsController {
         .then(() => {
           this.message = 'Password successfully changed.';
         })
-        .catch(() => {
+        .catch(err => {
+          err = err.data;
           form.password.$setValidity('mongoose', false);
-          this.errors.other = 'Incorrect password';
+          if (err.message === 'User validation failed') {
+             this.errors.other = 'New password is shorter than the minimum allowed length (6)';
+          }
+          else {
+             this.errors.other = 'Incorrect password';
+          }
           this.message = '';
         });
     }

@@ -10,7 +10,8 @@ angular.module('meanonlineshopApp', [
   'btford.socket-io',
   'ui.router',
   'validation.match',
-  'ui.bootstrap'    // Ui Bootstrap
+  'ui.bootstrap',                 // Ui Bootstrap
+  'toastr'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

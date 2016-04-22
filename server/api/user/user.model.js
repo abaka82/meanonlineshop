@@ -16,7 +16,10 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
-  password: String,
+  password: {
+    type: String,
+    minlength: 6
+  },
   provider: String,
   salt: String
 });

@@ -18,7 +18,8 @@ angular.module('meanonlineshopApp')
         url: '/login',
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data: { pageTitle: 'Login', specialClass: 'gray-bg' }
       })
       .state('logout', {
         url: '/logout?referrer',
