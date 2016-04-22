@@ -68,25 +68,27 @@ angular.module('meanonlineshopApp')
         })
        .state('commerce.products_grid', {
             url: "/products_grid",
-            templateUrl: "views/commerce/ecommerce_products_grid.html",
+            templateUrl: "app/commerce/ecommerce_products_grid.html",
             data: { pageTitle: 'E-commerce grid' },
             authenticate: true
         })
         .state('commerce.product_list', {
             url: "/product_list",
-            templateUrl: "views/commerce/ecommerce_product_list.html",
-            data: { pageTitle: 'E-commerce product list' },
+             templateUrl: "app/commerce/ecommerce_product_list.html",
+             controller: 'EcommerceController',
+             controllerAs: 'ec',
+            //data: { pageTitle: 'E-commerce product list' },
             authenticate: true
         })
         .state('commerce.orders', {
             url: "/orders",
-            templateUrl: "views/commerce/ecommerce_orders.html",
+            templateUrl: "app/commerce/ecommerce_orders.html",
             data: { pageTitle: 'E-commerce orders' },
             authenticate: true
         })
         .state('commerce.product', {
             url: "/product",
-            templateUrl: "views/commerce/ecommerce_product.html",
+            templateUrl: "app/commerce/ecommerce_product.html",
             data: { pageTitle: 'Product edit' },
             authenticate: true
            /* resolve: {
@@ -106,7 +108,7 @@ angular.module('meanonlineshopApp')
         })
         .state('commerce.product_details', {
             url: "/product_details",
-            templateUrl: "views/commerce/ecommerce_product_details.html",
+            templateUrl: "app/commerce/ecommerce_product_details.html",
             data: { pageTitle: 'E-commerce Product detail' },
             authenticate: true
            /* resolve: {
@@ -125,13 +127,13 @@ angular.module('meanonlineshopApp')
         })
         .state('commerce.payments', {
             url: "/payments",
-            templateUrl: "views/commerce/ecommerce_payments.html",
+            templateUrl: "app/commerce/ecommerce_payments.html",
             data: { pageTitle: 'E-commerce payments' },
             authenticate: true
         })
         .state('commerce.cart', {
             url: "/cart",
-            templateUrl: "views/commerce/ecommerce_cart.html",
+            templateUrl: "app/commerce/ecommerce_cart.html",
             data: { pageTitle: 'Shopping cart' },
             authenticate: true
         });
@@ -146,8 +148,9 @@ angular.module('meanonlineshopApp')
   });
 
 
+
 angular
     .module('meanonlineshopApp')
-    .run(function($rootScope, $state) {
+    .run(function($rootScope, $state, '$timeout') {
         $rootScope.$state = $state;
     });

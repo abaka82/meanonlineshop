@@ -25,6 +25,7 @@ class MainController {
     if (this.newThing) {
       this.$http.post('/api/things', { name: this.newThing });
       this.newThing = '';
+       console.log('masuk');
     }
   }
 
