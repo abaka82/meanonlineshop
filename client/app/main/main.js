@@ -152,6 +152,6 @@ angular.module('meanonlineshopApp')
 
 angular
     .module('meanonlineshopApp')
-    .run(function($rootScope, $state, '$timeout') {
+    .run(function($rootScope, $state) {
         $rootScope.$state = $state;
     });

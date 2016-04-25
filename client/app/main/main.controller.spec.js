@@ -5,7 +5,7 @@ describe('Component: mainComponent', function() {
   // load the controller's module
   beforeEach(module('meanonlineshopApp'));
   beforeEach(module('stateMock'));
-  beforeEach(module('socketMock'));
+//  beforeEach(module('socketMock'));
 
   var scope;
   var mainComponent;
@@ -18,8 +18,9 @@ describe('Component: mainComponent', function() {
     $http,
     $componentController,
     $rootScope,
-    $state,
-    socket) {
+    $state
+ //   socket
+ ) {
       $httpBackend = _$httpBackend_;
       $httpBackend.expectGET('/api/things')
         .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
@@ -28,8 +29,8 @@ describe('Component: mainComponent', function() {
       state = $state;
       mainComponent = $componentController('main', {
         $http: $http,
-        $scope: scope,
-        socket: socket
+        $scope: scope
+    //    socket: socket
       });
   }));
 
