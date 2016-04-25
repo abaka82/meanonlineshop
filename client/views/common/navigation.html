@@ -48,7 +48,7 @@
                                 <a href="">Edit User</a>
                             </li>
                             <li>
-                                <a href="">User list</a>
+                                <a ui-sref="admin.user">User list</a>
                             </li>
                         </ul>
                     </li>
@@ -88,9 +88,7 @@
              <li ui-sref-active="active" ng-show="nav.isLoggedIn()">
                 <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-Commerce</span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse" ng-class="{in: $state.includes('commerce')}">
-                    <li ui-sref-active="active"><a ui-sref="commerce.products_grid">Products grid</a></li>
                     <li ui-sref-active="active"><a ui-sref="commerce.product_list">Products list</a></li>
-                    <li ui-sref-active="active"><a ui-sref="commerce.product_details">Product detail</a></li>
                     <li ui-sref-active="active"><a ui-sref="commerce.cart">Cart</a></li>
                     <li ui-sref-active="active"><a ui-sref="commerce.orders">Orders</a></li>
                     <li ui-sref-active="active"><a ui-sref="commerce.payments">Credit Card form</a></li>
