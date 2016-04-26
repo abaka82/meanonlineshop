@@ -10,7 +10,7 @@
 'use strict';
 
 import _ from 'lodash';
-import Product from './product.model';
+
 
 var path = require('path');
 
