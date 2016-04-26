@@ -25,11 +25,9 @@ class EcommerceController{
                         $scope.sizeInBytes = result.size;
                     });*/
 
-    this.$http.post('/upload', {});
+   // this.$http.post('/upload', {});
    // if (this.newProduct) {
     //console.log(imageupload);
-    console.log();
-     console.log( $('i.stmageurl').val());
         this.$http.post('/api/products', 
         {
         Title: this.newProduct.title,
@@ -40,6 +38,8 @@ class EcommerceController{
         Price: this.newProduct.price,
         Stock: this.newProduct.stock,
         Status: this.newProduct.status
+        }).success(function(result) {
+            console.log(result);
         });
       this.newProduct = {};
    // }
@@ -93,10 +93,10 @@ angular.module('meanonlineshopApp')
 
 })();
 
-angular.module('meanonlineshopApp')
+/*angular.module('meanonlineshopApp')
 .controller('EcommerceController', function ($scope, $state, Product) {
      single = function(image) {
-                       /* var formData = new FormData();
+                        var formData = new FormData();
                         formData.append('image', image, image.file.name);
 
                         this.$http.post('/upload', formData, {
@@ -112,7 +112,7 @@ angular.module('meanonlineshopApp')
                          {
                           console.log(data);
                          })
-                        ;*/
+                        ;
                         Product.upload(image)
       };
-  });
+  });*/

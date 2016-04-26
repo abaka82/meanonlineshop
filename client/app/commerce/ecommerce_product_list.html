@@ -18,7 +18,12 @@
     </div>
 </div>
 
+<div>
+    <button type="submit" ng-click="ec.DialogDemoCtrl()">tesdialog</button>
+                </div>
+</div>
 <form class="thing-form" name="form" ng-submit="ec.addProduct(form)">
+
    <!-- <label>Syncs in realtime across clients</label>
     <p class="input-group">
       <input type="text" class="form-control" name="title" placeholder="Add a new product here." ng-model="ec.newProduct.title">
@@ -88,7 +93,7 @@
                             
                      
                                  <input type="file" class="btn" accept="image/*" image="image" resize-max-height="300" resize-max-width="250" resize-quality="0.7" />
-                                  <input initial-value type="text" id="imageurl" value = "{{image.resized.dataURL}}" ng-model="ec.newProduct.image"></input>
+                                  <input type="text" id="imageurl" value = "{{image.resized.dataURL}}" ng-model="ec.newProduct.image"></input>
                                   <image></image>
                          
                              <button type="submit" ng-click="ec.single(image)">Add</button>

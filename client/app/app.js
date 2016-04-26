@@ -14,9 +14,7 @@ angular.module('meanonlineshopApp', [
   'ui.bootstrap',                 // Ui Bootstrap
   'toastr',
   'meanonlineshopApp.imageupload',
-  'initialValue',
-  'ngFileUpload',
-   'meanonlineshopApp.product'
+  'ngFileUpload'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
