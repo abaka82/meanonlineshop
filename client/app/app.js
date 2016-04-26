@@ -3,6 +3,7 @@
 angular.module('meanonlineshopApp', [
   'meanonlineshopApp.auth',
   'meanonlineshopApp.admin',
+  'meanonlineshopApp.productGrid',
   'meanonlineshopApp.constants',
   'ngCookies',
   'ngResource',

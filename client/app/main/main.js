@@ -48,9 +48,11 @@ angular.module('meanonlineshopApp')
         
       ////// Main state ///////  
       .state('index.main', {
-           // abstract: true,
-            url: "/main",
-            template: '<main></main>',
+            url: "/products_grid",
+            templateUrl: "app/commerce/ecommerce_products_grid.html",
+            data: { pageTitle: 'E-commerce grid' },
+            controller: 'ProductGridController',
+            controllerAs: 'vm',
             authenticate: true
         })
       .state('index.minor', {
@@ -71,14 +73,16 @@ angular.module('meanonlineshopApp')
             url: "/products_grid",
             templateUrl: "app/commerce/ecommerce_products_grid.html",
             data: { pageTitle: 'E-commerce grid' },
+            controller: 'ProductGridController',
+            controllerAs: 'vm',
             authenticate: true
         })
         .state('commerce.product_list', {
             url: "/product_list",
-             templateUrl: "app/commerce/ecommerce_product_list.html",
-             controller: 'EcommerceController',
-             controllerAs: 'ec',
-            //data: { pageTitle: 'E-commerce product list' },
+            templateUrl: "app/commerce/ecommerce_product_list.html",
+            controller: 'EcommerceController',
+            controllerAs: 'ec',
+            data: { pageTitle: 'E-commerce product list' },
             authenticate: true
         })
         .state('commerce.orders', {
@@ -92,39 +96,14 @@ angular.module('meanonlineshopApp')
             templateUrl: "app/commerce/ecommerce_product.html",
             data: { pageTitle: 'Product edit' },
             authenticate: true
-           /* resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            files: ['css/plugins/summernote/summernote.css','css/plugins/summernote/summernote-bs3.css','js/plugins/summernote/summernote.min.js']
-                        },
-                        {
-                            name: 'summernote',
-                            files: ['css/plugins/summernote/summernote.css','css/plugins/summernote/summernote-bs3.css','js/plugins/summernote/summernote.min.js','js/plugins/summernote/angular-summernote.min.js']
-                        }
-                    ]);
-                }
-            }*/
-
         })
         .state('commerce.product_details', {
-            url: "/product_details",
+            url: "/product_details/:id",
             templateUrl: "app/commerce/ecommerce_product_details.html",
             data: { pageTitle: 'E-commerce Product detail' },
+            controller: 'ProductDetailsController',
+            controllerAs: 'vm',
             authenticate: true
-           /* resolve: {
-                loadPlugin: function ($ocLazyLoad) {
-                    return $ocLazyLoad.load([
-                        {
-                            files: ['css/plugins/slick/slick.css','css/plugins/slick/slick-theme.css','js/plugins/slick/slick.min.js']
-                        },
-                        {
-                            name: 'slick',
-                            files: ['js/plugins/slick/angular-slick.min.js']
-                        }
-                    ]);
-                }
-            }*/
         })
         .state('commerce.payments', {
             url: "/payments",
