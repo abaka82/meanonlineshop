@@ -62,6 +62,22 @@ angular.module('meanonlineshopApp')
             authenticate: true
         })
 
+      /////// Admin state //////////
+       .state('admin', {
+            abstract: true,
+            url: "/admin",
+            templateUrl: "views/common/content.html",
+            authenticate: true
+        })
+       .state('admin.user_list', {
+            url: "/user_list",
+            templateUrl: "app/admin/user/user.html",
+            data: { pageTitle: 'Admin user' },
+            controller: 'UserListController',
+          //  controllerAs: 'vm',
+            authenticate: true
+        })
+
       /////// Commerce state //////////
        .state('commerce', {
             abstract: true,

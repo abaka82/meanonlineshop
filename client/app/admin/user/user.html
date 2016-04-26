@@ -1,0 +1,36 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>E-commerce grid</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a ui-sref="index.main">Home</a>
+            </li>
+            <li>
+                <a>Admin</a>
+            </li>
+            <li class="active">
+                <strong>User list</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  
+  <table ng-table="usersTable" show-filter="true" class="table table-hover table-striped">
+    <tr ng-repeat="user in data">
+        <td title="'First Name'" filter="{ firstname: 'text'}" sortable="'firstname'">
+            {{user.firstname}}</td>
+        <td title="'Last Name'" filter="{ lastname: 'text'}" sortable="'lastname'">
+            {{user.lastname}}</td>
+        <td title="'Email'" filter="{ email: 'text'}" sortable="'email'">
+            {{user.email}}</td>            
+        <td title="'Role'" filter="{ role: 'text'}" sortable="'role'">
+            {{user.role}}</td>    
+    </tr>
+</table>
+</div>

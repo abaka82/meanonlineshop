@@ -2,7 +2,6 @@
 
 angular.module('meanonlineshopApp', [
   'meanonlineshopApp.auth',
-  'meanonlineshopApp.admin',
   'meanonlineshopApp.productGrid',
   'meanonlineshopApp.constants',
   'ngCookies',
@@ -14,7 +13,8 @@ angular.module('meanonlineshopApp', [
   'ui.bootstrap',                 // Ui Bootstrap
   'toastr',
   'meanonlineshopApp.imageupload',
-  'ngFileUpload'
+  'ngFileUpload',
+  'ngTable'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
