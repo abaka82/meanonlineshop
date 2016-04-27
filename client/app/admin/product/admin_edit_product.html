@@ -1,0 +1,145 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>E-commerce product list</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a ui-sref="admin.list_product">Admin product</a>
+            </li>
+            <li class="active">
+                <strong>Edit Product</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<br></br>
+
+<form class="thing-form" name="form" ng-submit="editProduct(form)" novalidate>
+
+   <!-- <label>Syncs in realtime across clients</label>
+    <p class="input-group">
+      <input type="text" class="form-control" name="title" placeholder="Add a new product here." ng-model="ec.newProduct.title">
+      <span class="input-group-btn">
+      
+      </span>
+    </p>-->
+
+    <div class="ibox-content m-b-sm border-bottom">
+           <div>
+          	   <div class="form-group">
+                    <label class="control-label" for="product_name">Product ID</label>
+                    <input type="text" id="NewProduct"  name="NewProduct" ng-value="product._id" class="form-control" ng-model="product._id" disabled>
+                </div>
+                <div class="form-group" 
+                 ng-class="{ 'has-success': form.NameProduct.$valid && submitted,
+                 'has-error': form.NameProduct.$invalid && submitted }"
+                >
+                    <label class="control-label" for="product_name">Product Name</label>
+                      <p class="help-block" ng-show="form.NameProduct.$error.required && submitted">
+			            A product name is required
+			          </p>
+                    <input type="text" id="NameProduct"  name="NameProduct" ng-value="product.Title" placeholder="Add a new product here." class="form-control" ng-model="product.Title" required>
+
+                </div>
+            </div>
+            <div >
+                <div class="form-group" 
+                 ng-class="{ 'has-success': form.Author.$valid && submitted,
+                 'has-error': form.Author.$invalid && submitted }"
+                >
+                    <label class="control-label" for="Author">Author</label>
+                    <p class="help-block" ng-show="form.Author.$error.required && submitted">
+			            Author is required
+			          </p>
+                    <input type="text" id="Author" name="Author" ng-value="product.Author" placeholder="Author" class="form-control" ng-model="product.Author" required>
+                </div>
+            </div>
+            <div >
+                <div class="form-group" 
+                 ng-class="{ 'has-success': form.Description.$valid && submitted,
+                'has-error': form.Description.$invalid && submitted }"
+                >
+                    <label class="control-label" for="Description">Description</label>
+                    <p class="help-block" ng-show="form.Description.$error.required && submitted">
+			            The Description is required
+			          </p>
+                    <input type="text" id="Description" name="Description" ng-value="product.Description" placeholder="Description" class="form-control" ng-model="product.Description" required>
+                </div>
+            </div>
+            <div >
+                <div class="form-group"
+                 ng-class="{ 'has-success': form.Category.$valid && submitted,
+                'has-error': form.Category.$invalid && submitted }"
+                >
+                    <label class="control-label" for="Category">Category</label>
+                      <p class="help-block" ng-show="form.Category.$error.required && submitted">
+			            The Category is required
+			          </p>
+                      <input type="text" id="Category" name="Category" ng-value="product.Category" placeholder="Category" class="form-control" ng-model="product.Category" required>
+                </div>
+            </div>
+             
+
+              <div >
+                <div class="form-group"
+                 ng-class="{ 'has-success': form.Price.$valid && submitted,
+                'has-error': form.Price.$invalid && submitted }"
+                >
+                    <label class="control-label" for="Price">Price</label>
+                     <p class="help-block" ng-show="form.Price.$error.required && submitted">
+			            Number of price is required
+			          </p>
+                      <input type="number" id="Price" name="Price" ng-value="product.Price" placeholder="Price" class="form-control" ng-model="product.Price" required>
+                </div>
+            </div>
+             <div >
+                <div class="form-group"
+                 ng-class="{ 'has-success': form.Stock.$valid && submitted,
+                'has-error': form.Stock.$invalid && submitted }"
+                >
+                    <label class="control-label" for="Stock">Stock</label>
+                     <p class="help-block" ng-show="form.Stock.$error.required && submitted">
+			            Number of stock is required
+			          </p>
+                      <input type="number" id="Stock" name="Stock" ng-value="product.Stock" placeholder="Stock" class="form-control" ng-model="product.Stock" required>
+                </div>
+            </div>
+             <div >
+                <div class="form-group">
+                    <label class="control-label" for="status">Status</label>
+                    <select name="status" id="status" class="form-control" ng-model="product.Status" >
+                        <option value="Available" selected>Available</option>
+                        <option value="Unavailable">Unavailable</option>
+                    </select>
+                </div>
+            </div>
+    <button type="submit" class="btn btn-primary" >Update</button>
+    </div>
+  </form>
+  
+  <div >
+                <div class="form-group">
+                    <label class="control-label" for="Image">Image</label>
+                    
+                             <img ng-show="image" ng-src="{{image.resized.dataURL}}" type="{{image.file.type}}" > </img>
+                             </td>
+                            
+                     
+                                 <input type="file" class="btn" accept="image/*" image="image" resize-max-height="300" resize-max-width="250" resize-quality="0.7" />
+                                  <input type="text" id="imageurl" value = "{{image.resized.dataURL}}" ng-model="ec.newProduct.image"></input>
+                                  <image></image>
+                         
+                             <button type="submit" ng-click="ec.single(image)">Add</button>
+                </div>
+            </div>
+  <div class="ibox-content">
+                 <!--   <div class="text-center">
+                        <button class="btn btn-primary" ng-click="ec.DialogDemoCtrl()">Form in simple modal box</button>
+                    </div>-->
+  </div>
+

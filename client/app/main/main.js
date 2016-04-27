@@ -77,6 +77,30 @@ angular.module('meanonlineshopApp')
           //  controllerAs: 'vm',
             authenticate: true
         })
+       .state('admin.create_product', {
+            url: "/create_product",
+            templateUrl: "app/admin/product/admin_create_product.html",
+            data: { pageTitle: 'Create Product' },
+            controller: 'AdminProductController',
+          //  controllerAs: 'vm',
+            authenticate: true
+        })
+       .state('admin.list_product', {
+            url: "/list_product",
+            templateUrl: "app/admin/product/admin_list_product.html",
+            data: { pageTitle: 'Product List' },
+            controller: 'AdminProductController',
+          //  controllerAs: 'vm',
+            authenticate: true
+        })
+       .state('admin.edit_product', {
+            url: "/edit_product/:id",
+            templateUrl: "app/admin/product/admin_edit_product.html",
+            data: { pageTitle: 'Edit Product' },
+            controller: 'EditProductController',
+          //  controllerAs: 'vm',
+            authenticate: true
+        })
 
       /////// Commerce state //////////
        .state('commerce', {
