@@ -14,7 +14,8 @@ angular.module('meanonlineshopApp', [
   'toastr',
   'meanonlineshopApp.imageupload',
   'ngFileUpload',
-  'ngTable'
+  'ngTable',
+  'angular.backtop'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

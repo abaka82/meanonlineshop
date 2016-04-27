@@ -73,6 +73,116 @@ Product.find({}).remove()
       Price: 20000,
       Stock: 5,
       Status: 'Available'
+    }, {
+      Title: 'Deployment sadas',
+      Description: 'dsfsdfdsfs your app to Heroku or dsdsds with the heroku ' +
+             'and openssdfsfhift subgenesdfsdfrators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
+    }, {
+      Title: 'Deployment Ready',
+      Description: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
+             'and openshift subgenerators',
+      Author: 'Salesforce',
+      Category: 'Heroku',
+      Image: '',
+      Price: 20000,
+      Stock: 5,
+      Status: 'Available'
     })
     .then(() => {
       console.log('finished populating products');
