@@ -13,6 +13,7 @@ import _ from 'lodash';
 import Product from './product.model';
 
 var path = require('path');
+var logger = require('../../components/logger');
 
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
@@ -60,16 +61,35 @@ function handleError(res, statusCode) {
     res.status(statusCode).send(err);
   };
 }
-
+/*
 function saveFile(res, file) {
   return function(entity){
-    var newPath = 'app/public/images' + path.basename(file.path);
+    var newPath = '/assets/uploads/' + path.basename(file.path);
     entity.imageUrl = newPath;
-    return entity.saveAsync().spread(function(updated) {
+    logger.debug('entity : '+JSON.stringify(entity));
+    return entity.saveAsync().spread(function(updated, numberAffected) {
+      logger.debug('updated : '+JSON.stringify(updated));
+      logger.debug('numberAffected : '+numberAffected);
       return updated;
     });
   }
 }
+*/
+function saveFile(res, file) {
+  logger.debug("Product.controller - saveFile function");
+  return function(entity){
+    var newPath = '/assets/uploads/product/' + path.basename(file.path);
+    entity.imageUrl = newPath;
+    logger.debug("Product.controller - entity: " + JSON.stringify(entity));
+    logger.debug("Product.controller - imageUrl: " + entity.imageUrl);
+    
+    return entity.save()
+      .then(updated => {
+        return updated;
+      });
+  }
+}
+
 
 // Gets a list of Products
 export function index(req, res) {
@@ -93,6 +113,21 @@ export function create(req, res) {
     .catch(handleError(res));
 }
 
+// Uploads a new Product's image in the DB
+export function upload(req, res) {
+  logger.debug("Product.controller - Upload function");
+  var file = req.files.file;
+  if(!file){
+    return handleError(res)('File not provided');
+  }
+
+  return Product.findByIdAsync(req.params.id)
+    .then(handleEntityNotFound(res))
+    .then(saveFile(res, file))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+};
+
 // Updates an existing Product in the DB
 export function update(req, res) {
   if (req.body._id) {
@@ -112,16 +147,3 @@ export function destroy(req, res) {
     .then(removeEntity(res))
     .catch(handleError(res));
 }
-
-exports.upload = function(req, res) {
-  var file = req.files.file;
-  if(!file){
-    return handleError(res)('File not provided');
-  }
-
-  Product.findByIdAsync(req.params.id)
-    .then(handleEntityNotFound(res))
-    .then(saveFile(res, file))
-    .then(responseWithResult(res))
-    .catch(handleError(res));
-};

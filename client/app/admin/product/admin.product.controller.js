@@ -1,10 +1,17 @@
 'use strict';
 
+
+var errorHandler;
+
+  errorHandler = function ($scope){
+  return function error(httpResponse){
+    console.log('failed: ', httpResponse);
+    $scope.errors = httpResponse;
+  };
+};
+
 angular.module('meanonlineshopApp')
   .controller('AdminProductController', function ($scope, User, $state, $http, toastr, Product, $stateParams, ngTableParams) {
-
- $scope.newProduct = {};
- //$scope.products = Product.query();
 
          $scope.listProductTable = new ngTableParams({
                 page: 1,
@@ -22,45 +29,32 @@ angular.module('meanonlineshopApp')
                 }
             });
 
-         $scope.addProduct = function(form) {
-           $scope.submitted = true;    
-            this.$http = $http;
-             /*var formData = new FormData();
-                          formData.append('image', this.image);
-                          console.log(this.image);
-                          this.$http.post('/upload', formData, {
-                              headers: { 'Content-Type': false },
-                              transformRequest: angular.identity
-                          }).success(function(result) {
-                              $scope.uploadedImgSrc = result.src;
-                              $scope.sizeInBytes = result.size;
-                          });*/
-
-         // this.$http.post('/upload', {});
-         // if (this.newProduct) {
-          //console.log(imageupload);
-           if (form.$valid) {
-            this.$http.post('/api/products', 
-              {
-              Title: this.newProduct.title,
-              Author: this.newProduct.author,
-              Description: this.newProduct.description,
-              Category: this.newProduct.category,
-              Image: this.newProduct.image,
-              Price: this.newProduct.price,
-              Stock: this.newProduct.stock,
-              Status: this.newProduct.status
-              }).success(function(result) {
-                  console.log(result);
-                  $scope.newProduct = {};
-                  toastr.success('New product has been added successfully');
-                  $state.go('admin.list_product');
-              }).catch(function (err) {
+    $scope.product = {}; // create a new instance
+    $scope.addProduct = function(){
+        if ( typeof $scope.product.picture === 'undefined')
+        {
+             // create product without image
+            return Product.save($scope.product).$promise
+            .then(function (product) {
+                toastr.success('New product has been added successfully');
+                $state.go('admin.list_product');
+            }).catch(function (err) {
                 toastr.error(err.data.message, 'There is an error');
-              });
-            }
+            });
         }
-
+       else
+       { 
+            // upload and create product with image
+            return Product.save($scope.product).$promise.then(function (product) {
+            return Product.upload($scope.product.picture, product._id);                
+            }).then(function (product) {
+                toastr.success('New product has been added successfully');
+                $state.go('admin.list_product');
+            }).catch(function (err) {
+                toastr.error(err.data.message, 'There is an error');
+            });
+       };
+    };
 
       $scope.deleteProduct = function(productId) {
            this.$http = $http;
@@ -70,8 +64,7 @@ angular.module('meanonlineshopApp')
                   $state.reload();
               }).catch(function (err) {
                 toastr.error(err.data.message, 'There is an error');
-              });
-            
+              });            
         }
   
       
@@ -100,20 +93,7 @@ angular.module('meanonlineshopApp')
        $scope.editProduct = function(form) {
          $scope.submitted = true;    
          this.$http = $http;
-             /*var formData = new FormData();
-                          formData.append('image', this.image);
-                          console.log(this.image);
-                          this.$http.post('/upload', formData, {
-                              headers: { 'Content-Type': false },
-                              transformRequest: angular.identity
-                          }).success(function(result) {
-                              $scope.uploadedImgSrc = result.src;
-                              $scope.sizeInBytes = result.size;
-                          });*/
 
-         // this.$http.post('/upload', {});
-         // if (this.newProduct) {
-          //console.log(imageupload);
           if (form.$valid) {
             this.$http.put('/api/products/' + $scope.id, 
               {

@@ -12,7 +12,6 @@ angular.module('meanonlineshopApp', [
   'validation.match',
   'ui.bootstrap',                 // Ui Bootstrap
   'toastr',
-  'meanonlineshopApp.imageupload',
   'ngFileUpload',
   'ngTable'
 ])

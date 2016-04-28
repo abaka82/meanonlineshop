@@ -3,7 +3,7 @@
         <h2>Create product</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="index.html">Home</a>
+                <a ui-sref="index.main">Home</a>
             </li>
             <li>
                <a ui-sref="admin.list_product">Admin product</a>
@@ -19,11 +19,11 @@
 </div>
 <br></br>
 
-<form class="thing-form" name="form" ng-submit="addProduct(form)" novalidate>
+<form class="thing-form" name="form" ng-submit="addProduct()" novalidate>
 
    <!-- <label>Syncs in realtime across clients</label>
     <p class="input-group">
-      <input type="text" class="form-control" name="title" placeholder="Add a new product here." ng-model="ec.newProduct.title">
+      <input type="text" class="form-control" name="title" placeholder="Add a new product here." ng-model="ec.product.title">
       <span class="input-group-btn">
       
       </span>
@@ -39,7 +39,7 @@
                      <p class="help-block" ng-show="form.NewProduct.$error.required && submitted">
                       A product name is required
                     </p>
-                    <input type="text" id="NewProduct"  name="NewProduct" value="" placeholder="Add a new product here." class="form-control" ng-model="newProduct.title" required>
+                    <input type="text" id="NewProduct"  name="NewProduct" value="" placeholder="Add a new product here." class="form-control" ng-model="product.Title" required>
                 </div>
             </div>
             <div >
@@ -51,7 +51,7 @@
                     <p class="help-block" ng-show="form.Author.$error.required && submitted">
                       Author is required
                     </p>
-                    <input type="text" id="Author" name="Author" value="" placeholder="Author" class="form-control" ng-model="newProduct.author" required>
+                    <input type="text" id="Author" name="Author" value="" placeholder="Author" class="form-control" ng-model="product.Author" required>
                 </div>
             </div>
             <div >
@@ -63,7 +63,7 @@
                      <p class="help-block" ng-show="form.Description.$error.required && submitted">
                       The Description is required
                     </p>
-                    <input type="text" id="Description" name="Description" value="" placeholder="Description" class="form-control" ng-model="newProduct.description" required>
+                    <input type="text" id="Description" name="Description" value="" placeholder="Description" class="form-control" ng-model="product.Description" required>
                 </div>
             </div>
             <div >
@@ -75,7 +75,7 @@
                     <p class="help-block" ng-show="form.Category.$error.required && submitted">
                       The Category is required
                     </p>
-                      <input type="text" id="Category" name="Category" value="" placeholder="Category" class="form-control" ng-model="newProduct.category" required>
+                      <input type="text" id="Category" name="Category" value="" placeholder="Category" class="form-control" ng-model="product.Category" required>
                 </div>
             </div>
              
@@ -89,7 +89,7 @@
                      <p class="help-block" ng-show="form.Price.$error.required && submitted">
                       Number of price is required
                     </p>
-                      <input type="number" id="Price" name="Price" value="" placeholder="Price" class="form-control" ng-model="newProduct.price" required>
+                      <input type="number" id="Price" name="Price" value="" placeholder="Price" class="form-control" ng-model="product.Price" required>
                 </div>
             </div>
              <div >
@@ -101,7 +101,7 @@
                      <p class="help-block" ng-show="form.Stock.$error.required && submitted">
                       Number of stock is required
                     </p>
-                      <input type="number" id="Stock" name="Stock" value="" placeholder="Stock" class="form-control" ng-model="newProduct.stock" required>
+                      <input type="number" id="Stock" name="Stock" value="" placeholder="Stock" class="form-control" ng-model="product.Stock" required>
                 </div>
             </div>
              <div >
@@ -113,16 +113,33 @@
                      <p class="help-block" ng-show="form.status.$error.required && submitted">
                       Please select status
                     </p>
-                    <select name="status" id="status" class="form-control" ng-model="newProduct.status" >
+                    <select name="status" id="status" class="form-control" ng-model="product.Status" >
                         <option value="Available" selected>Available</option>
                         <option value="Unavailable">Unavailable</option>
                     </select>
                 </div>
             </div>
+            
+            <div >
+                <div class="form-group">                
+                    <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
+                    ngf-drag-over-class="dragover" ngf-multiple="false"
+                    ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*">Drop product image here or click to upload button</div>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+                    <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture">Upload picture</button>
+
+                    <h2 ng-show="product.picture">Preview</h2>
+                    <img ngf-src="product.picture" width="170px">
+                    <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}</div>
+                    <img src="{{product.imageUrl}}" alt="{{product.Title}}" class="img-responsive">
+                </div>
+            </div>          
+            
     <button type="submit" class="btn btn-primary" >Add New</button>
     </div>
   </form>
-  
+   <!-- 
   <div >
                 <div class="form-group">
                     <label class="control-label" for="Image">Image</label>
@@ -132,16 +149,11 @@
                             
                      
                                  <input type="file" class="btn" accept="image/*" image="image" resize-max-height="300" resize-max-width="250" resize-quality="0.7" />
-                                  <input type="text" id="imageurl" value = "{{image.resized.dataURL}}" ng-model="ec.newProduct.image"></input>
+                                  <input type="text" id="imageurl" value = "{{image.resized.dataURL}}" ng-model="ec.product.image"></input>
                                   <image></image>
                          
                              <button type="submit" ng-click="ec.single(image)">Add</button>
                 </div>
             </div>
-  <div class="ibox-content">
-                 <!--   <div class="text-center">
-                        <button class="btn btn-primary" ng-click="ec.DialogDemoCtrl()">Form in simple modal box</button>
-                    </div>-->
-  </div>
-
+-->
     

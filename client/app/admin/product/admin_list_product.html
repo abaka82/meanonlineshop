@@ -1,3 +1,24 @@
+ <div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Create product</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a ui-sref="index.main">Home</a>
+            </li>
+            <li>
+               <a ui-sref="admin.list_product">Admin product</a>
+            </li>
+            <li class="active">
+                <strong>List product</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+ 
+ 
  <div class="ibox-content">
                     <div class="text-center">
                         <button class="btn btn-primary" ng-click="ec.DialogDemoCtrl()">Form in simple modal box</button>
@@ -69,8 +90,7 @@
                             <th data-hide="phone">Author</th>
                             <th data-hide="all">Description</th>
                             <th data-hide="all">Category</th>
-                            <th data-hide="all">Image</th>
-                            <th data-hide="phone">Price</th>
+                              <th data-hide="phone">Price</th>
                             <th data-hide="phone,tablet" >Stock</th>
                             <th data-hide="phone">Status</th>
                             <th class="text-right" data-sort-ignore="true">Action</th>
@@ -90,9 +110,6 @@
                             </td>
                             <td>
                                 {{product.Category}}
-                            </td>
-                            <td>
-                                {{product.Image}}
                             </td>
                             <td>
                             	<div style="word-wrap:break-word;width:200px;">

@@ -1,6 +1,7 @@
 'use strict';
 
-import mongoose from 'mongoose';
+//import mongoose from 'mongoose';
+var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var ProductSchema = new mongoose.Schema({
   Title: String,
@@ -10,7 +11,8 @@ var ProductSchema = new mongoose.Schema({
   Image: String,
   Price: Number,
   Stock: Number,
-  Status: String
+  Status: String,
+  imageUrl: String
 });
 
 export default mongoose.model('Product', ProductSchema);
