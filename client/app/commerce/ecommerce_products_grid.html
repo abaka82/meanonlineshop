@@ -1,10 +1,13 @@
 
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
-        <h2>Product grid</h2>
+        <h2>E-commerce grid</h2>
         <ol class="breadcrumb">
             <li>
                 <a ui-sref="index.main">Home</a>
+            </li>
+            <li>
+                <a>E-commerce</a>
             </li>
             <li class="active">
                 <strong>Products grid</strong>
@@ -20,18 +23,23 @@
     <div class="row">
      <input ng-model="q.Title" id="search" class="form-control" placeholder="Search">
      <br></br>
-        <div id="containerProduct" class="col-md-3 animated flipInX" ng-repeat="product in products | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+        <div id="containerProduct" ng-class="myGrid" class="col-md-3 " ng-repeat="product in products | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"  >
             <div class="ibox">
                 <div class="ibox-content product-box">
-                    <div class="product-imitation">
-                        <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive" style="width:150px;height:150px;">
+                    <div class="product-imitation" ng-mouseover="hoverIn();myClass = 'product-name  fadeInUp blur animated caption-text'" ng-mouseleave="hoverOut();myClass = 'product-name  fadeOutUp'">
+                    <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive makecenter">
+                       <span  ng-show="hoverTitle" ng-class="myClass" > 
+                          <a  ui-sref="commerce.product_details({id : product._id})" style="color:gainsboro;">
+                          {{product.Title}}
+                          </a>
+                        </span>
                     </div>
                     <div class="product-desc">
                                 <span class="product-price">
                                      {{product.Price}}
                                 </span>
-                        <small class="text-muted"> {{product.Category}}</small>
-                        <a ui-sref="commerce.product_details({id : product._id})" class="product-name">  {{product.Title | limitCharacters : 30}}</a>
+                        <small class="text-muted" style="font-size:100%"> {{product.Category}}</small>
+                        <!--<a ui-sref="commerce.product_details({id : product._id})" class="product-name">  {{product.Title}}</a>-->
                         <div class="small m-t-xs">
                              {{product.Decription}}
                         </div>
@@ -49,11 +57,11 @@
     <table style="width:100%">
     <tr>
       <td>
-        <button class="btn btn-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        <button class="btn btn-primary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1;myGrid='animated fadeInRightBig'">
                                 Previous
         </button>
         {{currentPage+1}}/{{numberOfPages()}}
-        <button class="btn btn-primary" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        <button class="btn btn-primary" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1;myGrid='animated fadeInRightBig'">
         Next
         </button>
       </td>

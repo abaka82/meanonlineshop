@@ -37,7 +37,14 @@ $scope.getData = function () {
 
  $scope.pageSize = $scope.items.value;
   
+  $scope.hoverIn = function(){
+        this.hoverTitle = true;
+    };
 
+    $scope.hoverOut = function(){
+        this.hoverTitle = false;
+    };
+    
 })
 
 .filter('startFrom', function() {
@@ -45,10 +52,4 @@ $scope.getData = function () {
         start = +start; //parse to int
         return input.slice(start);
     }
-})
-
-.filter('limitCharacters',function(){
-  return function(input,characterCount){
-  return (input.length > characterCount) ? input.substring(0,characterCount) + ' ...' : input;
-}
 });
