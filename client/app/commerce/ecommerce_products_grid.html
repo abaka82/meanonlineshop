@@ -28,16 +28,24 @@
                 <div class="ibox-content product-box">
                     <div class="product-imitation" ng-mouseover="hoverIn();myClass = 'product-name  fadeInUp blur animated caption-text'" ng-mouseleave="hoverOut();myClass = 'product-name  fadeOutUp'">
                     <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive makecenter">
-                       <span  ng-show="hoverTitle" ng-class="myClass" > 
+                      <span  ng-show="hoverTitle" ng-class="myClass" > 
                           <a  ui-sref="commerce.product_details({id : product._id})" style="color:gainsboro;">
                           {{product.Title}}
                           </a>
                         </span>
+                       <!-- <span class=" blur animated caption-text" > 
+                          <a  ui-sref="commerce.product_details({id : product._id})" style="color:gainsboro;">
+                          {{product.Title}}
+                          </a>  //FOR FIXING BLUR AND TITLE CAPTION
+                        </span> -->
+                    </div>
+                    <div>
+                      <span class="product-price">
+                                     {{product.Price | currency:"Rp "}}
+                                </span>
                     </div>
                     <div class="product-desc">
-                                <span class="product-price">
-                                     {{product.Price}}
-                                </span>
+                              
                         <small class="text-muted" style="font-size:100%"> {{product.Category}}</small>
                         <!--<a ui-sref="commerce.product_details({id : product._id})" class="product-name">  {{product.Title}}</a>-->
                         <div class="small m-t-xs">
