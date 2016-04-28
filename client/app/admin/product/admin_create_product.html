@@ -19,7 +19,7 @@
 </div>
 <br></br>
 
-<form class="thing-form" name="form" ng-submit="addProduct()" novalidate>
+<form class="thing-form" name="form" ng-submit="addProduct(form)" novalidate>
 
    <!-- <label>Syncs in realtime across clients</label>
     <p class="input-group">
@@ -122,23 +122,41 @@
             
             <div >
                 <div class="form-group">                
-                    <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
-                    ngf-drag-over-class="dragover" ngf-multiple="false"
-                    ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*">Drop product image here or click to upload button</div>
-                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-
-                    <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture">Upload picture</button>
-
-                    <h2 ng-show="product.picture">Preview</h2>
-                    <img ngf-src="product.picture" width="170px">
-                    <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}</div>
-                    <img src="{{product.imageUrl}}" alt="{{product.Title}}" class="img-responsive">
+                    <table>
+                    <thead>
+                    <tr>
+                      <th>Drop image</th>
+                      <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                      <th>Preview</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                    <td  style="padding-top:50px;">
+                      <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
+                      ngf-drag-over-class="dragover" ngf-multiple="false"
+                      ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*" >Drop product image here or click to upload button</div>
+                      <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td rowspan="2">
+                      <img ngf-src="product.picture" width="170px">
+                      <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}</div>
+                      <img src="{{product.imageUrl}}" alt="{{product.Title}}" class="img-responsive">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture">Upload picture</button>
+                      </td>
+                    </tr>
+                   </table>
                 </div>
             </div>          
             
     <button type="submit" class="btn btn-primary" >Add New</button>
     </div>
   </form>
+  <br></br>  <br></br>
    <!-- 
   <div >
                 <div class="form-group">

@@ -36,7 +36,9 @@ angular.module('meanonlineshopApp')
             });
 
     $scope.product = {}; // create a new instance
-    $scope.addProduct = function(){
+    $scope.addProduct = function(form){
+        $scope.submitted = true;    
+      if (form.$valid) {
         if ( typeof $scope.product.picture === 'undefined')
         {
              // create product without image
@@ -60,6 +62,7 @@ angular.module('meanonlineshopApp')
                 toastr.error(err.data.message, 'There is an error');
             });
        };
+     };
     };
 
       $scope.deleteProduct = function(productId) {
@@ -74,6 +77,10 @@ angular.module('meanonlineshopApp')
         }
   
       
+      $scope.idSelectedVote = null;
+      $scope.setSelected = function (idSelectedVote) {
+         $scope.idSelectedVote = idSelectedVote;
+      };
   })
 
 .directive('ngConfirmClick', [

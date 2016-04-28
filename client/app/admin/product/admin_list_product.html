@@ -90,7 +90,7 @@
 
                         </tr>
                         </thead>
-                        <tbody ng-repeat="product in data | orderBy:predicate:reverse | filter:searchKeyword">
+                        <tbody ng-click="setSelected(product._id)" ng-class="{selected: product._id === idSelectedVote}" ng-repeat="product in data | orderBy:predicate:reverse | filter:searchKeyword">
                         <tr>
                             <td>
                                 {{product.Title}}

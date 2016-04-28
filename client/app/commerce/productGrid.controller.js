@@ -6,9 +6,9 @@ angular.module('meanonlineshopApp.productGrid')
   // Use the Product $resource to fetch all products
    $scope.products = Product.query();
    $scope.currentPage = 0;
-   $scope.pageSize = 8;
    $scope.data = [];
    $scope.q = '';
+
 
 $scope.getData = function () {
       // needed for the pagination calc
@@ -26,7 +26,18 @@ $scope.getData = function () {
     product.$remove();
     this.products.splice(this.products.indexOf(product), 1);
   }  
+
+
+  $scope.items = {
+    "type": "select", 
+    "name": "Page Size",
+    "value": 8, 
+    "values": [ 8, 10, 15, 20] 
+  }; 
+
+ $scope.pageSize = $scope.items.value;
   
+
 })
 
 .filter('startFrom', function() {

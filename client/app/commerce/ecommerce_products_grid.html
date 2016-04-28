@@ -1,3 +1,4 @@
+
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-10">
         <h2>E-commerce grid</h2>
@@ -22,11 +23,11 @@
     <div class="row">
      <input ng-model="q.Title" id="search" class="form-control" placeholder="Search">
      <br></br>
-        <div class="col-md-3" ng-repeat="product in products | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
+        <div id="containerProduct" class="col-md-3 animated flipInX" ng-repeat="product in products | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
             <div class="ibox">
                 <div class="ibox-content product-box">
                     <div class="product-imitation">
-                        <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive">
+                        <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive" style="width:150px;height:150px;">
                     </div>
                     <div class="product-desc">
                                 <span class="product-price">
@@ -60,11 +61,8 @@
         </button>
       </td>
       <td>
-         <select ng-model="pageSize" id="pageSize" class="form-control">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
+         <select  ng-options="v for v in items.values" ng-model="pageSize" id="pageSize" class="form-control">
+
          </select>
       </td>
      </tr>
