@@ -114,7 +114,7 @@ angular.module('meanonlineshopApp')
             templateUrl: "app/commerce/ecommerce_products_grid.html",
             data: { pageTitle: 'E-commerce grid' },
             controller: 'ProductGridController',
-            controllerAs: 'vm',
+           // controllerAs: 'vm',
             authenticate: true
         })
         .state('commerce.product_list', {

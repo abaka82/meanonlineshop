@@ -13,7 +13,8 @@ angular.module('meanonlineshopApp', [
   'ui.bootstrap',                 // Ui Bootstrap
   'toastr',
   'ngFileUpload',
-  'ngTable'
+  'ngTable',
+  'angular.backtop'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

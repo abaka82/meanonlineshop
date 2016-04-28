@@ -11,11 +11,17 @@ var errorHandler;
 };
 
 angular.module('meanonlineshopApp')
-  .controller('AdminProductController', function ($scope, User, $state, $http, toastr, Product, $stateParams, ngTableParams) {
+  .controller('AdminProductController', function ($scope, User, $filter, $state, $http, toastr, Product, $stateParams, ngTableParams) {
 
+ var orderBy = $filter('orderBy');
+
+          $scope.order = function(predicate) {
+            $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
+            $scope.predicate = predicate;
+          };
          $scope.listProductTable = new ngTableParams({
                 page: 1,
-                count: 3
+                count: 5
             }, {
                 total: 0, // length of data
                 getData: function ($defer, params) {
