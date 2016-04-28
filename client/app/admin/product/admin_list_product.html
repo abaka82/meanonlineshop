@@ -73,9 +73,7 @@
                             	Category
                             	<span class="sortorder" ng-show="predicate === 'Category'" ng-class="{reverse:reverse}"></span>
                             </th>
-                            <th data-hide="all">
-                            Image
-                            </th>
+                           
                             <th data-hide="phone" ng-click="order('Price')" style="width:200px;">	Price
                              <span class="sortorder" ng-show="predicate === 'Price'" ng-class="{reverse:reverse}"></span>
                             </th>
@@ -92,27 +90,25 @@
                         </thead>
                         <tbody ng-click="setSelected(product._id)" ng-class="{selected: product._id === idSelectedVote}" ng-repeat="product in data | orderBy:predicate:reverse | filter:searchKeyword">
                         <tr>
-                            <td>
+                            <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Title}}
                             </td>
-                            <td>
+                            <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Author}}
                             </td>
                             <td >
                                <div style="word-wrap:break-word;width:300px;"> {{product.Description}} </div>
                             </td>
-                            <td>
+                            <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Category}}
                             </td>
+                           
                             <td>
-                                {{product.Image}}
-                            </td>
-                            <td>
-                            	<div style="word-wrap:break-word;width:200px;">
+                            	<div style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Price | currency:"Rp "}}
                                 </div>
                             </td>
-                            <td>
+                            <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Stock}}
                             </td>
                             <td>
@@ -128,7 +124,7 @@
                                 	<table>
                                 	<tr>
                                 		<td>
-                                    	<a class="btn btn-primary btn btn-xs" style="width:50px;">View</a>
+                                    	<a class="btn btn-primary btn btn-xs" style="width:50px;" ui-sref="commerce.product_details({ id : product._id})">View</a>
                                     	</td>
                                     </tr>
                                     <tr><td>&nbsp;</td></tr>
