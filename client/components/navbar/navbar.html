@@ -1,9 +1,8 @@
 <div>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show="nav.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
-        <li ng-hide="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
-       <!-- <li ng-show="nav.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
-        <li ng-show="nav.isLoggedIn()"><a ui-sref="logout">Logout</a></li>-->
+        <li> <a ui-sref="commerce.cart"><span class="fa fa-shopping-cart"> </span>  Cart</a></li>
+        <li ng-show="nav.isAdmin()" ><a ui-sref="admin.list_product">Admin role</a></li>
+        <li ng-hide="nav.isLoggedIn()" ><a ui-sref="signup">Sign up</a></li>
+        <li ng-hide="nav.isLoggedIn()" ><a ui-sref="login">Login</a></li>
       </ul>
 </div>

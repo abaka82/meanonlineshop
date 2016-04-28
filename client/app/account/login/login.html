@@ -1,35 +1,51 @@
-<div class="middle-box text-center loginscreen  animated fadeInDown">
-    <div>
-        <div>
-            <h1 class="logo-name">IN+</h1>
-        </div>
-        <h3>Welcome to IN+</h3>
-        <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
-        </p>
-        <p>Login in. To see it in action.</p>
-        <form class="m-t"  name="form" role="form" ng-submit="vm.login(form)">
-            <div class="form-group has-error">
-                <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && vm.submitted">
-                Please enter your email and password.
-                </p>
-                <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
-                Please enter a valid email.
-                </p>
-                <p class="help-block">{{ vm.errors.other }}</p>
-            </div>
-            
-            <div class="form-group">
-                <input type="email" class="form-control" placeholder="Username" ng-model="vm.user.email" required="">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password" ng-model="vm.user.password" required="">
-            </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+<!-- Wrapper-->
+<div id="wrapper">
 
-            <a ui-sref="forgot_password"><small>Forgot password?</small></a>
-            <p class="text-muted text-center"><small>Do not have an account?</small></p>
-            <a class="btn btn-sm btn-white btn-block" ui-sref="signup">Create an account</a>
-        </form>
-        <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+    <div class="sidebar-collapse"></div>    
+    
+    <!-- Page wraper -->
+    <!-- ng-class with current state name give you the ability to extended customization your view -->
+    <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+
+        <div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+                <img src="assets/images/logo.png" alt="MEAN logo"> 
+            </div>
+            <h3>Welcome to Mean Shop</h3>
+            <p>Perfectly designed using MEAN full stack technology with INSPINIA themes.
+            </p>
+            <p>Login in. To see it in action.</p>
+            <form class="m-t"  name="form" role="form" ng-submit="vm.login(form)">
+                <div class="form-group has-error">
+                    <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && vm.submitted">
+                    Please enter your email and password.
+                    </p>
+                    <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
+                    Please enter a valid email.
+                    </p>
+                    <p class="help-block">{{ vm.errors.other }}</p>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Username" ng-model="vm.user.email" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" ng-model="vm.user.password" required="">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+
+                <a ui-sref="forgot_password"><small>Forgot password?</small></a>
+                <p class="text-muted text-center"><small>Do not have an account?</small></p>
+                <a class="btn btn-sm btn-white btn-block" ui-sref="signup">Create an account</a>
+            </form>
+            <p class="m-t"> <small>Inspinia web app framework based on Bootstrap 3 &copy; 2016</small> </p>
+        </div>
+        </div>
     </div>
+    <!-- End page wrapper-->
+
 </div>
+<!-- End wrapper-->
+
+

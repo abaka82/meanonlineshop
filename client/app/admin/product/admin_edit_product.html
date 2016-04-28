@@ -118,28 +118,43 @@
                     </select>
                 </div>
             </div>
+            
+            <div >
+                <div class="form-group">                
+                    <table>
+                    <thead>
+                    <tr>
+                      <th>Drop image</th>
+                      <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                      <th>Preview</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                    <td  style="padding-top:50px;">
+                      <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
+                      ngf-drag-over-class="dragover" ngf-multiple="false"
+                      ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*" >Drop product image here or click to upload button</div>
+                      <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                    </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td rowspan="2">
+                      <img ngf-src="product.picture" width="170px">
+                      <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}</div>
+                      <img src="{{product.imageUrl}}" alt="{{product.Title}}" class="img-responsive">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture">Upload picture</button>
+                      </td>
+                    </tr>
+                   </table>
+                </div>
+            </div>                      
+            
     <button type="submit" class="btn btn-primary" >Update</button>
     </div>
   </form>
-  
-  <div >
-                <div class="form-group">
-                    <label class="control-label" for="Image">Image</label>
-                    
-                             <img ng-show="image" ng-src="{{image.resized.dataURL}}" type="{{image.file.type}}" > </img>
-                             </td>
-                            
-                     
-                                 <input type="file" class="btn" accept="image/*" image="image" resize-max-height="300" resize-max-width="250" resize-quality="0.7" />
-                                  <input type="text" id="imageurl" value = "{{image.resized.dataURL}}" ng-model="ec.newProduct.image"></input>
-                                  <image></image>
-                         
-                             <button type="submit" ng-click="ec.single(image)">Add</button>
-                </div>
-            </div>
-  <div class="ibox-content">
-                 <!--   <div class="text-center">
-                        <button class="btn btn-primary" ng-click="ec.DialogDemoCtrl()">Form in simple modal box</button>
-                    </div>-->
-  </div>
+  <br></br>  <br></br>
+
 

@@ -98,36 +98,38 @@ angular.module('meanonlineshopApp')
             };
 }])
 
-.controller('EditProductController', function ($scope, User,  $state, $http, toastr, Product, $stateParams) {
-       // Use the Product $resource to fetch detail products
-       $scope.id = $stateParams.id
-       $scope.product = Product.get({id: $scope.id});
 
-       $scope.editProduct = function(form) {
-         $scope.submitted = true;    
-         this.$http = $http;
+.controller('EditProductController', function ($scope, User,  $state, $http, toastr, Product, Upload, $stateParams) {
+    // Use the Product $resource to fetch detail products
+    $scope.id = $stateParams.id
+    $scope.product = Product.get({id: $scope.id});
 
-          if (form.$valid) {
-            this.$http.put('/api/products/' + $scope.id, 
-              {
-              Title: this.product.Title,
-              Author: this.product.Author,
-              Description: this.product.Description,
-              Category: this.product.Category,
-              Image: this.product.Image,
-              Price: this.product.Price,
-              Stock: this.product.Stock,
-              Status: this.product.Status
-              }).success(function(result) {
-                  console.log(result);
-                  toastr.success('Product has been updated successfully');
-                   $state.go('admin.list_product');
-              }).catch(function (err) {
-                toastr.error(err.data.message, 'There is an error');
-                $state.go('admin.list_product');
-              });
-          }
-        }
-
+    $scope.editProduct = function(form){
+        $scope.submitted = true; 
+        if (form.$valid) {
+            if ( typeof $scope.product.picture === 'undefined')
+            {
+                // Update product without image
+                return Product.update({id: $scope.product._id}, $scope.product).$promise
+                .then(function (product) {
+                    toastr.success('Product has been updated successfully');
+                    $state.go('admin.list_product');
+                }).catch(function (err) {
+                    toastr.error(err.data.message, 'There is an error');
+                });
+            }
+        else
+            { 
+                // Update product with image
+                return Product.update({id: $scope.product._id}, $scope.product).$promise.then(function (product) {
+                return Product.upload($scope.product.picture, product._id);                
+                }).then(function (product) {
+                    toastr.success('Product has been updated successfully');
+                    $state.go('admin.list_product');
+                }).catch(function (err) {
+                    toastr.error(err.data.message, 'There is an error');
+                });
+            };
+        };
+    };
   });
-
