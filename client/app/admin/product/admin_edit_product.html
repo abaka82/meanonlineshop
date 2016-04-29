@@ -68,7 +68,7 @@
                     <p class="help-block" ng-show="form.Description.$error.required && submitted">
 			            The Description is required
 			          </p>
-                    <input type="text" id="Description" name="Description" ng-value="product.Description" placeholder="Description" class="form-control" ng-model="product.Description" required>
+                    <textarea type="text" id="Description" name="Description" ng-value="product.Description" placeholder="Description" class="form-control" ng-model="product.Description" required></textarea>
                 </div>
             </div>
             <div >
@@ -94,7 +94,9 @@
                      <p class="help-block" ng-show="form.Price.$error.required && submitted">
 			            Number of price is required
 			          </p>
-                      <input type="number" id="Price" name="Price" ng-value="product.Price" placeholder="Price" class="form-control" ng-model="product.Price" required>
+                      <input type="number" id="Price" name="Price" ng-value="product.Price" placeholder="Price" class="form-control" ng-model="product.Price" ng-pattern="/^\d*$/" required>
+                         <span style="color:red" ng-show="form.Price.$error.pattern">
+                      Please insert numbers which should be positive</span>
                 </div>
             </div>
              <div >
@@ -106,13 +108,15 @@
                      <p class="help-block" ng-show="form.Stock.$error.required && submitted">
 			            Number of stock is required
 			          </p>
-                      <input type="number" id="Stock" name="Stock" ng-value="product.Stock" placeholder="Stock" class="form-control" ng-model="product.Stock" required>
+                      <input type="number" ng-pattern="/^\d*$/" id="Stock" name="Stock" ng-value="product.Stock" placeholder="Stock" class="form-control" ng-model="product.Stock" ng-change="doCheck()" required>
+                      <span style="color:red" ng-show="form.Stock.$error.pattern">
+                      Please insert numbers which should be positive</span>
                 </div>
             </div>
              <div >
                 <div class="form-group">
                     <label class="control-label" for="status">Status</label>
-                    <select name="status" id="status" class="form-control" ng-model="product.Status" >
+                    <select name="status" id="status" class="form-control" ng-model="product.Status" disabled >
                         <option value="Available" selected>Available</option>
                         <option value="Unavailable">Unavailable</option>
                     </select>
@@ -139,9 +143,13 @@
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td rowspan="2">
                       <img ngf-src="product.picture" width="170px">
-                      <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}</div>
-                      <img src="{{product.imageUrl}}" alt="{{product.Title}}" class="img-responsive">
+                      <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}
+                      <br></br>
+                      <span>Size: {{ product.picture.size/1024/1024|number:2 }} MB </span>
+                      </div>
+                      <img src="{{product.imageUrl}}" ng-hide="product.picture" alt="{{product.Title}}" class="img-responsive">
                     </td>
+
                     </tr>
                     <tr>
                       <td>
@@ -151,8 +159,21 @@
                    </table>
                 </div>
             </div>                      
-            
-    <button type="submit" class="btn btn-primary" >Update</button>
+    <br></br>
+    <table>
+    <tr>
+      <td>
+        <button type="submit" class="btn btn-primary" >Update</button>
+      </td>
+      <td>
+       &nbsp;&nbsp; &nbsp;&nbsp;
+      </td>
+       <td>
+        <a class="btn btn-primary" ui-sref="admin.list_product">Cancel</a>
+      </td>
+    </tr>
+    </table>
+    
     </div>
   </form>
   <br></br>  <br></br>

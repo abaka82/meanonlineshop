@@ -70,7 +70,7 @@ angular.module('meanonlineshopApp')
             this.$http.delete('/api/products/' + productId, {})
               .success(function(result) {
                   toastr.success('Product has been deleted successfully');
-                  $state.reload();
+                  $scope.listProductTable.reload();
               }).catch(function (err) {
                 toastr.error(err.data.message, 'There is an error');
               });            
@@ -81,7 +81,27 @@ angular.module('meanonlineshopApp')
       $scope.setSelected = function (idSelectedVote) {
          $scope.idSelectedVote = idSelectedVote;
       };
-  })
+
+       $scope.doCheck = function () {
+        if ($scope.product.Stock > 0) {
+            $scope.product.Status = "Available";
+            //status.value
+        }
+        else{
+          $scope.product.Status = "Unavailable";
+        }
+    }
+
+    $scope.showAll = function () {
+          $scope.data = $scope.products;
+    }
+    $scope.showPaging = function () {
+      if($scope.searchKeyword.Title == ""){
+           $scope.listProductTable.reload();
+
+    }
+  }
+})
 
 .directive('ngConfirmClick', [
       function(){
@@ -97,6 +117,7 @@ angular.module('meanonlineshopApp')
                 }
             };
 }])
+
 
 
 .controller('EditProductController', function ($scope, User,  $state, $http, toastr, Product, Upload, $stateParams) {
@@ -132,4 +153,15 @@ angular.module('meanonlineshopApp')
             };
         };
     };
+
+    $scope.doCheck = function () {
+        if ($scope.product.Stock > 0) {
+            $scope.product.Status = "Available";
+            //status.value
+        }
+        else{
+          $scope.product.Status = "Unavailable";
+        }
+    };
+
   });

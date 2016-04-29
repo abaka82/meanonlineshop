@@ -109,6 +109,60 @@ Product.find({}).remove()
       "Stock" : 6,
       "Status" : "Available",
       "imageUrl" : "/assets/uploads/product/jZ4GAzGVK0hZhzaS4YrPvRMY.jpeg"
+    }, {
+      "Title" : "Introduction to Career Counselling & Coaching",
+      "Author" : "Mark Grand",
+      "Description" : "This book offers a practical introduction for those training in the field of career development, career counselling and career coaching, this book will take your students through established and emerging theory and the different contexts in which career work takes place introducing the key skills, techniques and models they'll need. Professional issues such as the use of digital technologies highlight the contemporary context of careers work and all of this is brought to life through engaging case studies and reflective questions, highlighting the practical applications of what is being learnt.",
+      "Category" : "Paperback",
+      "Price" : 41424,
+      "Stock" : 15,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/career counselling.jpg"
+    }, {
+      "Title" : "The Anatomy Coloring Book",
+      "Author" : "Wynn Kapit, Lawrence M. Elson",
+      "Description" : "Why use this coloring book?   For more than 35 years, The Anatomy Coloring Book has been the #1 best-selling human anatomy coloring book! A useful tool for anyone with an interest in learning anatomical structures, this concisely written text features precise, extraordinary hand-drawn figures that were crafted especially for easy coloring and interactive study. Organized according to body systems, each of the 162 two-page spreads  featured in this book includes an ingenious color-key system where anatomical terminology is linked to detailed illustrations of the structures of the body. When you color to learn with The Anatomy Coloring Book, you make visual associations with key terminology, and assimilate information while engaging in kinesthetic learning. Studying anatomy is made easy and fun!   The Fourth Edition features user-friendly two-page spreads with enlarged art, clearer, more concise text descriptions, and new boldface headings that make this classic coloring book accessible to a wider range of learners.",
+      "Category" : "Paperback",
+      "Price" : 77788,
+      "Stock" : 100,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/anatomycoloring.jpg"
+    }, {
+      "Title" : "Illusion Town",
+      "Author" : "Jayne Castle",
+      "Description" : "A new adventure begins on Harmony With its opulent casinos and hotels, the desert city of Illusion Town is totally unique and will take you on a thrill ride you ll never forget. Hannah West isn t the first woman to wake up in Illusion Town married to a man she barely knows, but she has no memory of the ceremony at all. For that matter, neither does Elias Coppersmith, her new husband. All either can remember is that they were on the run With Hannah s dubious background and shaky para-psych profile, she could have done much worse. The cooly competent mining heir arouses her curiosity as well as other parts of her mind and body. And even her dust bunny likes him. But a honeymoon spent retracing their footsteps leads Hannah and Elias into the twisting underground catacombs, where secrets from both their pasts will come to light and where the energy of their clashing auras will grow hot enough to burn ",
+      "Category" : "Romance",
+      "Price" : 344,
+      "Stock" : 65,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/illusiontown.jpg"
+    }, {
+      "Title" : "The Martian",
+      "Author" : "Andy Weir",
+      "Description" : "I'm stranded on Mars. I have no way to communicate with Earth. I'm in a Habitat designed to last 31 days. If the Oxygenator breaks down, I'll suffocate. If the Water Reclaimer breaks down, I'll die of thirst. If the Hab breaches, I'll just kind of explode. If none of those things happen, I'll eventually run out of food and starve to death. So yeah. I'm screwed. The Sunday Times Bestseller and Richard and Judy Book Club Selection behind the major new film from Ridley Scott starring Matt Damon and Jessica Chastain.",
+      "Category" : "Science Fiction",
+      "Price" : 212,
+      "Stock" : 45,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/The Martian.jpg"
+    }, {
+      "Title" : "Saga: V. 3",
+      "Author" : "Brian K. Vaughan, Fiona Staples",
+      "Description" : "The Eisner, Harvey, and Hugo Award-winning phenomenon continues, as new parents Marko and Alana travel to an alien world to visit their hero, while the family's pursuers finally close in on their targets.",
+      "Category" : "Science Fiction",
+      "Price" : 34,
+      "Stock" : 2,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/saga.jpg"
+    }, {
+      "Title" : "World War Z : An Oral History of the Zombie War",
+      "Author" : "Max Brooks",
+      "Description" : "NOW A MAJOR MOTION PICTURE We survived the zombie apocalypse, but how many of us are still haunted by that terrible time? We have (temporarily?) defeated the living dead, but at what cost? Told in the haunting and riveting voices of the men and women who witnessed the horror firsthand, 'World War Z,' now a #1 'New York Times' bestseller, is the only record of the plague years.",
+      "Category" : "Science Fiction",
+      "Price" : 76,
+      "Stock" : 5,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/worldwarz.jpg"
     })
     .then(() => {
       console.log('finished populating products');

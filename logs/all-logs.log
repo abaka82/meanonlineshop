@@ -1,0 +1,8 @@
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-04-28T08:34:45.434Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-04-28T08:34:45.436Z"}
+{"level":"debug","message":"Product.controller - entity: {\"_id\":\"5721bca3df3fa15c2eb0fbfa\",\"Title\":\"Patterns in Java - A Catalog of Reusable Design Patterns Illustrated with UML, 2nd Edition, Volume 1\",\"Author\":\"Mark Grand\",\"Description\":\"This is the best book on patterns since the Gang of Four's Design Patterns. The book manages to be a resource for three of the most important trends in professional programming: Patterns, Java, and UML\",\"Category\":\"General programming\",\"Price\":350,\"Stock\":6,\"Status\":\"Available\",\"imageUrl\":\"/assets/uploads/product/aW6VL3c3L-NpUP-89RV8XKnE.jpg\",\"__v\":0}","timestamp":"2016-04-28T08:34:45.438Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/aW6VL3c3L-NpUP-89RV8XKnE.jpg","timestamp":"2016-04-28T08:34:45.439Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-04-29T02:26:59.680Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-04-29T02:26:59.683Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/glBghDCNH6xR-UGJacrnBgGU.jpg\",\"_id\":\"5722c6736d18557821508686\",\"Title\":\"tes\",\"Author\":\"a\",\"Description\":\"ssdsdsd\",\"Category\":\"sd\",\"Price\":23,\"Stock\":34,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-04-29T02:26:59.687Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/glBghDCNH6xR-UGJacrnBgGU.jpg","timestamp":"2016-04-29T02:26:59.687Z"}

@@ -21,7 +21,7 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-     <input ng-model="q.Title" id="search" class="form-control" placeholder="Search">
+     <input ng-model="q.Title" id="search" class="form-control" ng-keypress="myGrid='animated fadeInRightBig'" placeholder="Search">
      <br></br>
         <div id="containerProduct" ng-class="myGrid" class="col-md-3 " ng-repeat="product in products | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"  >
             <div class="ibox">
@@ -41,7 +41,7 @@
                     </div>
                     <div>
                       <span class="product-price">
-                                     {{product.Price | currency:"Rp "}}
+                                     {{product.Price | currency}}
                                 </span>
                     </div>
                     <div class="product-desc">
