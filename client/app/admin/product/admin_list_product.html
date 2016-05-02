@@ -56,7 +56,7 @@
                    <table ng-table="listProductTable" show-filter="true" class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
                         <thead>
                         <tr>
-
+                           <th></th>
                             <th data-toggle="true" ng-click="order('Title')" style="width:200px;">
 	                            Title
 	                            <span class="sortorder" ng-show="predicate === 'Title'" ng-class="{reverse:reverse}"></span>
@@ -65,10 +65,7 @@
                             	Author
 								<span class="sortorder" ng-show="predicate === 'Author'" ng-class="{reverse:reverse}"></span>
                             </th>
-                            <th data-hide="all" ng-click="order('Description')" style="width:200px;">
-                            	Description
-                            	<span class="sortorder" ng-show="predicate === 'Description'" ng-class="{reverse:reverse}"></span>
-                            	</th>
+                        
                             <th data-hide="all" ng-click="order('Category')" style="width:200px;">
                             	Category
                             	<span class="sortorder" ng-show="predicate === 'Category'" ng-class="{reverse:reverse}"></span>
@@ -89,16 +86,16 @@
                         </tr>
                         </thead>
                         <tbody ng-click="setSelected(product._id)" ng-class="{selected: product._id === idSelectedVote}" ng-repeat="product in data | orderBy:predicate:reverse">
-                        <tr>
-                            
-                            <td style="word-wrap:break-word;width:200px;text-align: center;">
-                                {{product.Title}}
+                        <tr  ng-click="product.expanded = product.expanded ? false : true;">
+                            <td >
+                              <span class=" btn-primary btn " ng-if="product.expanded">-</span>
+                              <span class=" btn-primary btn" ng-if="!product.expanded" >+</span>
+                            </td>
+                            <td style="word-wrap:break-word;width:500px;text-align: left;">
+                                 {{product.Title}}
                             </td>
                             <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Author}}
-                            </td>
-                            <td >
-                               <div style="word-wrap:break-word;width:300px;"> {{product.Description}} </div>
                             </td>
                             <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Category}}
@@ -144,7 +141,20 @@
                                 </div>
                             </td>
                         </tr>
-
+                         <tr ng-if="product.expanded" ng-repeat-end="">
+                            <td colspan="2" style="text-align: center;font-weight: bold"> Image</td>
+                            <td colspan="8" style="text-align: center;font-weight: bold">Description</td>
+                         </tr>
+                         <tr ng-if="product.expanded" ng-repeat-end="" >
+                            <td colspan="2">
+                             <div style="word-wrap:break-word;">  
+                                <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive" style="margin-left:auto;margin-right:auto;">
+                             </div>
+                            </td>
+                         
+                            <td colspan="8">
+                            <div style="word-wrap:break-word;"> {{product.Description}} </div></td>
+                          </tr>
                         </tbody>
                        <tr>
                         <td><a class="btn btn-primary" ui-sref="admin.create_product"> Add new product</a></td>

@@ -12,8 +12,8 @@ var errorHandler;
 
 angular.module('meanonlineshopApp')
   .controller('AdminProductController', function ($scope, User, $filter, $state, $http, toastr, Product, $stateParams, ngTableParams) {
- 
- $scope.currentPage = 0;
+$scope.expanded = false;
+$scope.currentPage = 0;
  var orderBy = $filter('orderBy');
 $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
 
@@ -101,17 +101,11 @@ $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
         else{
           $scope.product.Status = "Unavailable";
         }
-    }
+    };
 
-    $scope.showAll = function () {
-          $scope.data = $scope.products;
-    }
-    $scope.showPaging = function () {
-      if($scope.searchKeyword.Title == ""){
-           $scope.listProductTable.reload();
-
-    }
-  }
+   $scope.collapseExpand = function(predicate) {
+            $scope.expanded = predicate == false ? true : false;
+          };
 })
 
 .directive('ngConfirmClick', [
