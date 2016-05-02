@@ -22,7 +22,7 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label class="control-label" for="product_name">Product Name</label>
-                    <input type="text" id="product_name" name="product_name" value="" placeholder="Product Name" class="form-control" ng-model="searchKeyword.Title" ng-change="showAll()" ng-mouseleave="showPaging()">
+                    <input type="text" id="product_name" name="product_name" value="" placeholder="Product Name" class="form-control" ng-model="searchKeyword.Title" >
                 </div>
             </div>
             <div class="col-sm-3">
@@ -88,8 +88,9 @@
 
                         </tr>
                         </thead>
-                        <tbody ng-click="setSelected(product._id)" ng-class="{selected: product._id === idSelectedVote}" ng-repeat="product in data | orderBy:predicate:reverse | filter:searchKeyword ">
+                        <tbody ng-click="setSelected(product._id)" ng-class="{selected: product._id === idSelectedVote}" ng-repeat="product in data | orderBy:predicate:reverse">
                         <tr>
+                            
                             <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Title}}
                             </td>

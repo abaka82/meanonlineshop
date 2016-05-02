@@ -12,8 +12,10 @@ var errorHandler;
 
 angular.module('meanonlineshopApp')
   .controller('AdminProductController', function ($scope, User, $filter, $state, $http, toastr, Product, $stateParams, ngTableParams) {
-
+ 
+ $scope.currentPage = 0;
  var orderBy = $filter('orderBy');
+$scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
 
           $scope.order = function(predicate) {
             $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
@@ -21,15 +23,24 @@ angular.module('meanonlineshopApp')
           };
          $scope.listProductTable = new ngTableParams({
                 page: 1,
-                count: 5
+                count: 5,
+                filter: $scope.searchKeyword
             }, {
                 total: 0, // length of data
                 getData: function ($defer, params) {
                     // Use the User $resource to fetch all users
                     Product.query({}, function(response) {
                       $scope.products = response;
-                      $scope.data = $scope.products.slice((params.page() - 1) * params.count(), params.page() * params.count());
-                      params.total($scope.products.length); // set total for recalc pagination
+                      //$scope.data = $scope.products.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                      if (params.filter().Title || params.filter().Author || params.filter().Category || params.filter().Stock  ) {
+                        $scope.data =  $filter('filter')($scope.products, params.filter());
+                        params.total($scope.data.length); 
+                      } else {
+                         $scope.data =  $scope.products.slice((params.page() - 1) * params.count(), params.page() * params.count());
+                        params.total($scope.products.length); 
+                      }
+                      console.log(params.filter().Title);
+                    // set total for recalc pagination
                       $defer.resolve($scope.data);
                     });
                 }
@@ -117,7 +128,6 @@ angular.module('meanonlineshopApp')
                 }
             };
 }])
-
 
 
 .controller('EditProductController', function ($scope, User,  $state, $http, toastr, Product, Upload, $stateParams) {
