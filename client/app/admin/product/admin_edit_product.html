@@ -30,11 +30,21 @@
     </p>-->
 
     <div class="ibox-content m-b-sm border-bottom">
+                <div>
+                      <div class="form-group"
+                        ng-class="{ 'has-success': form.Isbn.$valid && submitted,
+                       'has-error': form.Isbn.$invalid && submitted }"
+                      >
+                          <label class="control-label" for="Isbn">ISBN</label>
+                           <p class="help-block" ng-show="form.Isbn.$error.required && submitted">
+                            ISBN is required
+                          </p>
+                          <input type="text" id="Isbn"  name="Isbn"  placeholder="ex. ISBN 90-70002-34-5 or ISBN 90-70002-34-x"  class="form-control" ng-pattern="/^ISBN\s(?=[-0-9xX ]{13}$)(?:[0-9]+[- ]){3}[0-9]*[xX0-9]$/" ng-model="product.ISBN" required>
+        <span style="color:red" ng-show="form.Isbn.$error.pattern">
+                            Please insert the correct format for ISBN</span>
+                      </div>
+                  </div>
            <div>
-          	   <div class="form-group">
-                    <label class="control-label" for="product_name">Product ID</label>
-                    <input type="text" id="NewProduct"  name="NewProduct" ng-value="product._id" class="form-control" ng-model="product._id" disabled>
-                </div>
                 <div class="form-group" 
                  ng-class="{ 'has-success': form.NameProduct.$valid && submitted,
                  'has-error': form.NameProduct.$invalid && submitted }"
@@ -94,9 +104,9 @@
                      <p class="help-block" ng-show="form.Price.$error.required && submitted">
 			            Number of price is required
 			          </p>
-                      <input type="number" id="Price" name="Price" ng-value="product.Price" placeholder="Price" class="form-control" ng-model="product.Price" ng-pattern="/^\d*$/" required>
-                         <span style="color:red" ng-show="form.Price.$error.pattern">
-                      Please insert numbers which should be positive</span>
+                      <input type="number" id="Price" name="Price" ng-value="product.Price" placeholder="Price" class="form-control" ng-model="product.Price" ng-pattern="/^\$?[0-9]+(\.[0-9][0-9])?$/" required>
+                      <span style="color:red" ng-show="form.Price.$error.pattern">
+                      Please insert the correct format</span>
                 </div>
             </div>
              <div >

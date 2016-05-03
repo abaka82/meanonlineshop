@@ -56,7 +56,9 @@
                    <table ng-table="listProductTable" show-filter="true" class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
                         <thead>
                         <tr>
-                           <th></th>
+                            <th data-toggle="true" style="width:200px;">
+                                ISBN
+                            </th>
                             <th data-toggle="true" ng-click="order('Title')" style="width:200px;">
 	                            Title
 	                            <span class="sortorder" ng-show="predicate === 'Title'" ng-class="{reverse:reverse}"></span>
@@ -87,9 +89,19 @@
                         </thead>
                         <tbody ng-click="setSelected(product._id)" ng-class="{selected: product._id === idSelectedVote}" ng-repeat="product in data | orderBy:predicate:reverse">
                         <tr  ng-click="product.expanded = product.expanded ? false : true;">
-                            <td >
-                              <span class=" btn-primary btn " ng-if="product.expanded">-</span>
-                              <span class=" btn-primary btn" ng-if="!product.expanded" >+</span>
+                        
+                            <td style="word-wrap:break-word;width:300px;text-align: left;">
+                             <table style="margin-top: -5px;"> 
+                             <tr>
+                                 <td><span class=" btn-primary btn " ng-if="product.expanded">-</span>
+                                 <span class=" btn-primary btn" ng-if="!product.expanded" >+</span></td>
+                                 <td> &nbsp;&nbsp;
+                                 </td>
+                                 <td>{{product.ISBN}}</td>
+                             </tr>
+
+                             </table>
+                             
                             </td>
                             <td style="word-wrap:break-word;width:500px;text-align: left;">
                                  {{product.Title}}

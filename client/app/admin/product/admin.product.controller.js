@@ -11,10 +11,33 @@ var errorHandler;
 };
 
 angular.module('meanonlineshopApp')
-  .controller('AdminProductController', function ($scope, User, $filter, $state, $http, toastr, Product, $stateParams, ngTableParams) {
+  .controller('AdminProductController', function ($scope, Upload, User, $filter, $state, $http, toastr, Product, $stateParams, ngTableParams) {
 $scope.expanded = false;
 $scope.currentPage = 0;
+//$scope.product.picture = {};
  var orderBy = $filter('orderBy');
+
+/* $scope.$watch('files', function (files) {
+    $scope.formUpload = false;
+    if (files != null) {
+      if (!angular.isArray(files)) {
+        $timeout(function () {
+          $scope.files = files = [files];
+        });
+        return;
+      }
+      for (var i = 0; i < files.length; i++) {
+        Upload.imageDimensions(files[i]).then(function (d) {
+          $scope.d = d;
+        });
+        $scope.errorMsg = null;
+        (function (f) {
+          $scope.upload(f, true);
+        })(files[i]);
+      }
+    }
+  });*/
+
 $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
 
           $scope.order = function(predicate) {
@@ -105,6 +128,10 @@ $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
 
    $scope.collapseExpand = function(predicate) {
             $scope.expanded = predicate == false ? true : false;
+          };
+
+          $scope.liatModel = function() {
+            console.log($scope.product.picture);
           };
 })
 

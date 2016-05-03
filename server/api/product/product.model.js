@@ -4,6 +4,7 @@
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var ProductSchema = new mongoose.Schema({
+  ISBN: String,
   Title: String,
   Author: String,
   Description: String,

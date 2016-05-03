@@ -6,3 +6,36 @@
 {"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-04-29T02:26:59.683Z"}
 {"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/glBghDCNH6xR-UGJacrnBgGU.jpg\",\"_id\":\"5722c6736d18557821508686\",\"Title\":\"tes\",\"Author\":\"a\",\"Description\":\"ssdsdsd\",\"Category\":\"sd\",\"Price\":23,\"Stock\":34,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-04-29T02:26:59.687Z"}
 {"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/glBghDCNH6xR-UGJacrnBgGU.jpg","timestamp":"2016-04-29T02:26:59.687Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:03:44.539Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:03:44.543Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"5728070054c381001f1d6e7c\",\"Price\":23500.23,\"ISBN\":\"ISBN 90-70002-34-5\",\"Title\":\"testing ISBN\",\"Author\":\"Andry baka\",\"Description\":\"ssssssasdasdas\",\"Category\":\"asfasasdas\",\"Stock\":2,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-03T02:03:44.548Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-03T02:03:44.548Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:07:48.190Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:07:48.193Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"572807f454c381001f1d6e7d\",\"ISBN\":\"ISBN 90-70002-34-5\",\"Title\":\"wefsf\",\"Author\":\"ewrew\",\"Description\":\"dsfsdfds\",\"Category\":\"ewr\",\"Price\":323,\"Stock\":3,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-03T02:07:48.195Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-03T02:07:48.195Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:12:55.535Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:12:55.536Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"5728090f54c381001f1d6e7e\",\"ISBN\":\"ISBN 90-70002-34-6\",\"Title\":\"dsfdsds\",\"Author\":\"dfgdfg\",\"Description\":\"dfgdfgdfg\",\"Category\":\"dfgdgdfgdf\",\"Price\":4444,\"Stock\":4,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-03T02:12:55.538Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-03T02:12:55.538Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:15:42.136Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:16:45.945Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:16:45.946Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"572809fb54c381001f1d6e80\",\"ISBN\":\"ISBN 90-70002-34-7\",\"Title\":\"dfsvsdvds\",\"Author\":\"dsvdsvsd\",\"Description\":\"dvsdsvds\",\"Category\":\"sdvs\",\"Price\":423,\"Stock\":3,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-03T02:16:45.947Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-03T02:16:45.948Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:22:52.257Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:22:52.263Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"57280b2854c381001f1d6e81\",\"ISBN\":\"ISBN 90-70002-34-9\",\"Title\":\"sdsf\",\"Author\":\"dsfdsfds\",\"Description\":\"sdfsdf\",\"Category\":\"sfsdf\",\"Price\":4322,\"Stock\":3,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-03T02:22:52.267Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-03T02:22:52.268Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:35:37.444Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:35:37.444Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"57280e6f54c381001f1d6e83\",\"Title\":\"isdasfdsfds\",\"ISBN\":\"ISBN 90-70002-35-1\",\"Author\":\"dsfdsf\",\"Description\":\"dsfsdfs\",\"Category\":\"dsfdsdsfdsf\",\"Price\":329,\"Stock\":1,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-03T02:35:37.452Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-03T02:35:37.452Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:45:14.204Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:45:14.204Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/eaRHTZaNXXhIjAqrB0uvxPlB.jpg\",\"_id\":\"572810ab54c381001f1d6e84\",\"ISBN\":\"ISBN 90-70002-32-3\",\"Title\":\"anrf\",\"Author\":\"adadasda\",\"Description\":\"fsaasdasdas\",\"Category\":\"asdasdas\",\"Price\":231,\"Stock\":3,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-03T02:45:14.206Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/eaRHTZaNXXhIjAqrB0uvxPlB.jpg","timestamp":"2016-05-03T02:45:14.206Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-03T02:48:18.963Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:48:18.963Z"}
+{"level":"debug","message":"Product.controller - entity: {\"_id\":\"572810ab54c381001f1d6e84\",\"ISBN\":\"ISBN 90-70002-32-3\",\"Title\":\"anrf\",\"Author\":\"adadasda\",\"Description\":\"fsaasdasdas\",\"Category\":\"asdasdas\",\"Price\":231,\"Stock\":3,\"Status\":\"Available\",\"__v\":0,\"imageUrl\":\"/assets/uploads/product/m9Ffp9bzeitJBB4uQPfXs_D4.jpg\"}","timestamp":"2016-05-03T02:48:18.965Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/m9Ffp9bzeitJBB4uQPfXs_D4.jpg","timestamp":"2016-05-03T02:48:18.966Z"}

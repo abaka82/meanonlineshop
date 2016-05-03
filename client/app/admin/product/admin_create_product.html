@@ -30,6 +30,20 @@
     </p>-->
 
     <div class="ibox-content m-b-sm border-bottom">
+            <div>
+                <div class="form-group"
+                  ng-class="{ 'has-success': form.Isbn.$valid && submitted,
+                 'has-error': form.Isbn.$invalid && submitted }"
+                >
+                    <label class="control-label" for="Isbn">ISBN</label>
+                     <p class="help-block" ng-show="form.Isbn.$error.required && submitted">
+                      ISBN is required
+                    </p>
+                    <input type="text" id="Isbn"  name="Isbn"  placeholder="ex. ISBN 90-70002-34-5 or ISBN 90-70002-34-x"  class="form-control" ng-pattern="/^ISBN\s(?=[-0-9xX ]{13}$)(?:[0-9]+[- ]){3}[0-9]*[xX0-9]$/" ng-model="product.ISBN" required>
+  <span style="color:red" ng-show="form.Isbn.$error.pattern">
+                      Please insert the correct format for ISBN</span>
+                </div>
+            </div>
            <div>
                 <div class="form-group"
                   ng-class="{ 'has-success': form.NewProduct.$valid && submitted,
@@ -89,9 +103,9 @@
                      <p class="help-block" ng-show="form.Price.$error.required && submitted">
                       Number of price is required
                     </p>
-                      <input type="number" id="Price" name="Price" value="" placeholder="Price, example: 2300" class="form-control" ng-model="product.Price"  ng-pattern="/^\d*$/" required>
+                      <input type="number" id="Price" name="Price" value="" placeholder="Price, example: 2300 or 23.22" class="form-control" ng-model="product.Price"  ng-pattern="/^\$?[0-9]+(\.[0-9][0-9])?$/" required>
                      <span style="color:red" ng-show="form.Price.$error.pattern">
-                      Please insert numbers which should be positive</span>
+                      Please insert the correct format</span>
                 </div>
             </div>
              <div >
@@ -131,18 +145,31 @@
                     <tr>
                       <th>Drop image</th>
                       <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                      <th>Preview</th>
+                      <th>Preview
+                       <p>Total files: {{ product.picture.length }}</p></th>
                     </tr>
                     </thead>
                     <tr>
                     <td  style="padding-top:50px;">
-                      <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
+                         <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
                       ngf-drag-over-class="dragover" ngf-multiple="false"
                       ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*" >Drop product image here or click to upload button</div>
                       <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td rowspan="2">
+                    <td rowspan="2" >
+                     <!-- <table ng-repeat="image in product.picture">
+                         <tr>
+                          <td> <img ngf-src="image" width="170px" ></td>
+                         </tr>
+                         <tr>
+                          <td><div ng-show="image">{{image.name}} {{image.$error}} {{image.$errorParam}}</div></td>
+                         </tr>
+                         <tr>
+                          <td>  <span>Size: {{ image.size/1024/1024|number:2 }} MB </span></td>
+                        </tr>
+                      </table>
+                      <br></br>-->
                       <img ngf-src="product.picture" width="170px">
                       <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}
                       <br></br>
@@ -153,7 +180,9 @@
                     </tr>
                     <tr>
                       <td>
-                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture">Upload picture</button>
+                      <!--<button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture" ngf-multiple="true">Upload picture</button>-->
+                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture" ngf-multiple="false">Upload picture</button>
+                        <!--<button ng-click="liatModel()" multiple>tes</button>-->
                       </td>
                     </tr>
                    </table>
