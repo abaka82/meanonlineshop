@@ -14,7 +14,6 @@
 
     </div>
 </div>
-<br></br>
 
     <div class="ibox-content m-b-sm border-bottom">
        <div class="row">
@@ -52,7 +51,11 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox">
+              <div style="margin-bottom: 10px;">
+                        <td><a class="btn btn-primary" ui-sref="admin.create_product"> Add new product</a></td>
+                 </div>
                 <div class="ibox-content">
+                 
                    <table ng-table="listProductTable" show-filter="true" class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
                         <thead>
                         <tr>
@@ -115,7 +118,7 @@
                            
                             <td>
                             	<div style="word-wrap:break-word;width:200px;text-align: center;">
-                                {{product.Price | currency:"Rp "}}
+                                {{product.Price | currency}}
                                 </div>
                             </td>
                             <td style="word-wrap:break-word;width:200px;text-align: center;">
@@ -146,7 +149,7 @@
                                     <tr><td>&nbsp;</td></tr>
                                      <tr>
                                 		<td>
-                                   		 <a class="btn btn-danger btn btn-xs" confirmed-click="deleteProduct(product._id)" ng-confirm-click="Do yo want to delete {{product.Title}} ?" style="width:50px;">Delete</a>
+                                   		 <a class="btn btn-danger btn btn-xs" confirmed-click="deleteProduct(product._id, product.Stock)" ng-confirm-click="Do yo want to delete {{product.Title}} ?" style="width:50px;">Delete</a>
                                    		 </td>
                                     </tr>
                                     </table>
@@ -168,9 +171,7 @@
                             <div style="word-wrap:break-word;"> {{product.Description}} </div></td>
                           </tr>
                         </tbody>
-                       <tr>
-                        <td><a class="btn btn-primary" ui-sref="admin.create_product"> Add new product</a></td>
-                        </tr>
+                      
                     </table>
 
                 </div>

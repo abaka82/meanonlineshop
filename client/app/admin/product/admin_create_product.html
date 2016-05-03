@@ -117,9 +117,9 @@
                      <p class="help-block" ng-show="form.Stock.$error.required && submitted">
                       Number of stock is required
                     </p>
-                      <input type="number" ng-pattern="/^\d*$/" id="Stock" name="Stock" value="" placeholder="Stock" class="form-control" ng-model="product.Stock" ng-change="doCheck()" required>
-                      <span style="color:red" ng-show="form.Stock.$error.pattern">
-                      Please insert numbers which should be positive</span>
+                      <input type="number" id="Stock" name="Stock" value="" placeholder="Stock" class="form-control" ng-model="product.Stock" ng-pattern="/^\d*$/" ng-change="doCheck()"  min="0" max="100" required>
+                      <span style="color:red" ng-show="form.Stock.$invalid">
+                       Minimum stock is 0, Maximum stock is 100</span>
                 </div>
             </div>
              <div >

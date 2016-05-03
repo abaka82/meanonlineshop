@@ -99,15 +99,20 @@ $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
      };
     };
 
-      $scope.deleteProduct = function(productId) {
+      $scope.deleteProduct = function(productId, stock) {
            this.$http = $http;
-            this.$http.delete('/api/products/' + productId, {})
+           if (stock < 1 ){
+
+             this.$http.delete('/api/products/' + productId, {})
               .success(function(result) {
                   toastr.success('Product has been deleted successfully');
                   $scope.listProductTable.reload();
               }).catch(function (err) {
                 toastr.error(err.data.message, 'There is an error');
-              });            
+              });          
+            } else {
+              toastr.warning('You can only delete product which has been out of stock');
+            }
         }
   
       
