@@ -155,6 +155,7 @@ angular.module('meanonlineshopApp')
             url: "/cart",
             templateUrl: "app/commerce/ecommerce_cart.html",
             data: { pageTitle: 'Shopping cart' },
+            controller: 'CartController',
             authenticate: true
         });
   })
