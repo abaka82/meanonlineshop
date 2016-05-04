@@ -7,16 +7,26 @@ angular.module('meanonlineshopApp.productGrid')
    $scope.products = Product.query();
    $scope.currentPage = 0;
    $scope.data = [];
-   $rootScope.q = '';
+   $rootScope.q = {"Status": "!" + "Unavailable"};
 
 
 $scope.getData = function () {
       // needed for the pagination calc
       // https://docs.angularjs.org/api/ng/filter/filter
-      return $filter('filter')($scope.products, $scope.q)
+      $scope.temp = $filter('filter')($scope.products, $scope.q);
+      $scope.lastFiltered =  '';
+      if (typeof $scope.searchKeyword != 'undefined')
+         {
+          $scope.lastFiltered = $filter('filter')($scope.temp, $scope.searchKeyword);
+         } else {
+          $scope.lastFiltered = $scope.temp;
+      }
+      console.log("temp punya: " + $scope.lastFiltered.length);
+      return $scope.lastFiltered
 }
 
    $scope.numberOfPages=function(){
+    console.log($scope.getData().length);
         return Math.ceil($scope.getData().length/$scope.pageSize);                
     }
     

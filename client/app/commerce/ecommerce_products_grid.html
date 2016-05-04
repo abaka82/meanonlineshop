@@ -19,11 +19,11 @@
     </div>
 </div>
 
-<div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
-     <input ng-model="q.Title" id="search" class="form-control" ng-keypress="myGrid='animated fadeInRightBig'" placeholder="Search">
+<div class="wrapper wrapper-content animated fadeInRight" >
+    <div class="row" >
+     <input ng-model="searchKeyword" value="" id="search" class="form-control" ng-keypress="myGrid='animated fadeInRightBig'" placeholder="Search">
      <br></br>
-        <div id="containerProduct" ng-class="myGrid" class="col-md-3 " ng-repeat="product in products | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize"  >
+        <div id="containerProduct" ng-class="myGrid" class="col-md-3 " ng-repeat="product in lastFiltered | filter:q | filter:searchKeyword | startFrom:currentPage*pageSize | limitTo:pageSize" >
             <div class="ibox">
                 <div class="ibox-content product-box">
                     <div class="product-imitation" ng-mouseover="hoverIn();myClass = 'product-name  fadeInUp blur animated caption-text'" ng-mouseleave="hoverOut();myClass = 'product-name  fadeOutUp'">
