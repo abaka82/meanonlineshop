@@ -23,7 +23,17 @@
     <div class="row" >
      <input ng-model="searchKeyword" value="" id="search" class="form-control" ng-keypress="myGrid='animated fadeInRightBig'" placeholder="Search">
      <br></br>
-        <div id="containerProduct" ng-class="myGrid" class="col-md-3 " ng-repeat="product in lastFiltered | filter:q | filter:searchKeyword | startFrom:currentPage*pageSize | limitTo:pageSize" >
+     <div >
+
+     <select class="form-control ng-pristine ng-untouched ng-valid ng-not-empty" style="width: 15%;margin-bottom: 1%; margin-left: 84%;" ng-model="sorts" ng-change="order(sorts);myGrid='animated fadeInRightBig'"">
+       <option label="Select order by" value="Select order by" selected>Select order by</option>
+        <option label="A to Z" value="A to Z" >A to Z</option>
+        <option label="Z to A" value="Z to A">Z to A</option>
+        <option label="Highest Price" value="Highest Price">Highest Price</option>
+        <option label="Lowest Price" value="Lowest Price">Lowest Price</option>
+      </select>
+     </div>
+        <div id="containerProduct" ng-class="myGrid" class="col-md-3 " ng-repeat="product in lastFiltered | filter:q | filter:searchKeyword | orderBy:predicate:reverse | startFrom:currentPage*pageSize | limitTo:pageSize " >
             <div class="ibox">
                 <div class="ibox-content product-box">
                     <div class="product-imitation" ng-mouseover="hoverIn();myClass = 'product-name  fadeInUp blur animated caption-text'" ng-mouseleave="hoverOut();myClass = 'product-name  fadeOutUp'">

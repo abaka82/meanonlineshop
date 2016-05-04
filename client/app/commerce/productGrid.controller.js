@@ -9,6 +9,29 @@ angular.module('meanonlineshopApp.productGrid')
    $scope.data = [];
    $rootScope.q = {"Status": "!" + "Unavailable"};
 
+$scope.sorts = "Select order by";
+$scope.predicate = '';
+
+$scope.order = function(predicate) {
+            if (predicate === "A to Z"){
+              $scope.predicate = "Title";
+              $scope.reverse = false;
+            }
+            else if (predicate === "Z to A"){
+              $scope.predicate = "Title";
+              $scope.reverse = true;
+            }
+            else if (predicate === "Highest Price"){
+              $scope.predicate = "Price";
+              $scope.reverse = true;
+            }
+            else if (predicate === "Lowest Price"){
+              $scope.predicate = "Price";
+              $scope.reverse = false;
+            }else{
+              $scope.products.reload();
+            }
+          };
 
 $scope.getData = function () {
       // needed for the pagination calc
@@ -19,14 +42,12 @@ $scope.getData = function () {
          {
           $scope.lastFiltered = $filter('filter')($scope.temp, $scope.searchKeyword);
          } else {
-          $scope.lastFiltered = $scope.temp;
-      }
-      console.log("temp punya: " + $scope.lastFiltered.length);
+             $scope.lastFiltered = $scope.temp;
+        }
       return $scope.lastFiltered
 }
 
    $scope.numberOfPages=function(){
-    console.log($scope.getData().length);
         return Math.ceil($scope.getData().length/$scope.pageSize);                
     }
     
