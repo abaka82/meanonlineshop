@@ -1,8 +1,38 @@
 <div>
-      <ul class="nav navbar-nav navbar-right">
-        <li> <a ui-sref="commerce.cart"><span class="fa fa-shopping-cart"> </span>  Cart</a></li>
+      <ul class="nav navbar-nav navbar-right" >
+        <li class="dropdown open" uib-dropdown="" ng-controller="CartController as cartctrl"> 
+        <a class="count-info dropdown-toggle" aria-haspopup="true" class="count-info dropdown-toggle"  uib-dropdown-toggle="">
+        <span class="fa fa-shopping-cart"> 
+        </span>  Cart</a>
+	        <ul class="dropdown-messages dropdown-menu" uib-dropdown-menu=""  >
+	                    <li ng-repeat="cart in carts">
+	                        <div class="dropdown-messages-box">
+	                            <a ui-sref="profile" class="pull-left">
+	                                <img alt="image" style="width: 40px;height: 40px;" src="{{cart.Product.imageUrl}}">
+	                            </a>
+
+	                            <div>
+	                                <strong>   {{cart.Product.ISBN}} - {{cart.Product.Title}} </strong> <br>
+	                                <small class="text-muted">Qty: {{cart.Qty}} |  {{cart.Product.Price | currency}}</small>
+	                            </div>
+	                        </div>
+	                        <div class="divider"></div>
+	                    </li>
+	                    
+	                    
+	                    <li>
+	                        <div class="text-center link-block">
+	                            <a ui-sref="commerce.cart">
+	                                <i class="fa fa-shopping-cart"></i> <strong>Go to checkout</strong>
+	                            </a>
+	                        </div>
+	                    </li>
+	 		</ul>
+        </li>
         <li ng-show="nav.isAdmin()" ><a ui-sref="admin.list_product">Admin role</a></li>
         <li ng-hide="nav.isLoggedIn()" ><a ui-sref="signup">Sign up</a></li>
         <li ng-hide="nav.isLoggedIn()" ><a ui-sref="login">Login</a></li>
       </ul>
 </div>
+
+
