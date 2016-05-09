@@ -1,8 +1,9 @@
 <div>
       <ul class="nav navbar-nav navbar-right" >
         <li class="dropdown open" uib-dropdown="" ng-controller="CartController as cartctrl"> 
-        <a class="count-info dropdown-toggle" aria-haspopup="true" class="count-info dropdown-toggle"  uib-dropdown-toggle="">
-        <span class="fa fa-shopping-cart"> 
+        <a class="count-info dropdown-toggle fa fa-shopping-cart" aria-haspopup="true" uib-dropdown-toggle="">
+        <!--<span class="fa fa-shopping-cart"> -->
+        <span class="label label-warning">{{carts.length}}</span>
         </span>  Cart</a>
 	        <ul class="dropdown-messages dropdown-menu" uib-dropdown-menu=""  >
 	                    <li ng-repeat="cart in carts">
