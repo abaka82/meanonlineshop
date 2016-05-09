@@ -13,8 +13,8 @@
 	                            </a>
 
 	                            <div>
-	                                <strong>   {{cart.Product.ISBN}} - {{cart.Product.Title}} </strong> <br>
-	                                <small class="text-muted">Qty: {{cart.Qty}} |  {{cart.Product.Price | currency}}</small>
+	                                <strong> {{cart.Product.Title}} </strong> <br>
+	                                <small class="text-muted">Qty: {{cart.Qty}} | {{cart.Qty * cart.Product.Price | currency}}</small>
 	                            </div>
 	                        </div>
 	                        <div class="divider"></div>

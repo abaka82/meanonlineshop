@@ -36,6 +36,7 @@
                                 <tr>
                                     <td width="90">
                                         <div class="cart-product-imitation">
+                                        <img alt="image" style="width: 80px;height: 100px;" src="{{cart.Product.imageUrl}}">
                                         </div>
                                     </td>
                                     <td class="desc">
@@ -56,11 +57,11 @@
                                     <td>
                                         {{cart.Product.Price | currency}}
                                     </td>
-                                    <td width="65">
-                                      {{cart.Qty}}
+                                    <td width="85px">
                                         
-                                    <select name="qty" id="qty" class="form-control" ng-model="cart.Qty"
-                                      ng-options="n for n in [] | range:1:cart.Product.Stock">
+                                    <select name="qty" id="qty" class="form-control" ng-model="cart.Qty" 
+                                      ng-options="n for n in [] | range:1:cart.Product.Stock" 
+                                    ng-change="updateFromCart(carts[$index]._id)" >
                                     </select>
                                   
                                     </td>
@@ -79,7 +80,7 @@
                 <div class="ibox-content">
 
                     <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i> Checkout</button>
-                    <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+                    <button class="btn btn-white" ui-sref="index.main"><i class="fa fa-arrow-left"></i> Continue shopping</button>
 
                 </div>
             </div>

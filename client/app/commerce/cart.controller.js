@@ -49,6 +49,14 @@ angular.module('meanonlineshopApp')
         toastr.success('One cart item has been deleted');
       }, errorHandler($scope));
    };
+
+
+  $scope.updateFromCart = function(id) {
+      Cart.update({id: id}, $scope.carts[this.$index], function success(/* value, responseHeaders */) {
+        $state.reload();
+        toastr.success('One cart item has been updated');
+      }, errorHandler($scope));
+   };
 })
 
 .filter('startFrom', function() {

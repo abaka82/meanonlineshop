@@ -37,7 +37,7 @@ angular.module('meanonlineshopApp')
                   return Cart.update({id: cart[0]._id}, $scope.cart).$promise
                   .then(function (cart) {
                     toastr.success('Cart has been updated successfully');
-                    $state.go('commerce.cart');
+                    $state.reload();
                   }).catch(function (err) {
                     toastr.error('There is an error: ' + err.data.message);  
                   });
@@ -48,7 +48,7 @@ angular.module('meanonlineshopApp')
                   return Cart.save($scope.cart).$promise
                   .then(function (cart) {
                     toastr.success('New cart has been added successfully');
-                    $state.go('commerce.cart');
+                    $state.reload();
                   }).catch(function (err) {
                     toastr.error('There is an error: ' + err.data.message);  
                   });
