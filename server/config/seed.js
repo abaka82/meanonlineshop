@@ -180,6 +180,106 @@ Product.find({}).remove()
       "Stock" : 5,
       "Status" : "Available",
       "imageUrl" : "/assets/uploads/product/worldwarz.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-32-9",
+      "Title" : "Percy Jackson and the Lightning Thief: The Graphic Novel: Bk. 1",
+      "Author" : "Rick Riordan",
+      "Description" : "Look, I didn't want to be a half-blood. I never asked to be the son of a Greek God. I was just a normal kid, going to school, playing basketball, skateboarding. The usual. Until I accidentally vaporized my maths teacher. That's when things started really going wrong. Now I spend my time fighting with swords, battling monsters with my friends, and generally trying to stay alive. This is the one where Zeus, God of the Sky, thinks I've stolen his lightning bolt - and making Zeus angry is a very bad idea. Can Percy find the lightning bolt before a fully-fledged war of the Gods erupts?",
+      "Category" : "Graphic Novels",
+      "Price" : 120.23,
+      "Stock" : 15,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/percy.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-1",
+      "Title" : "The Walking Dead Compendium: Volume 2",
+      "Author" : "Robert Kirkman",
+      "Description" : "Returning with the second eight volumes of the fan - favorite, ''New York Times' bestseller series, 'The Walking Dead', collected into one massive paperback collection! This is the perfect collection for any fan of the Emmy Award-winning television series on AMC: over one-thousand pages chronicling the next chapter of Robert Kirkman's Eisner Award-winning continuing story of survival horror - beginning with Rick Grimes' struggle to survive after the prison raid, to the group's finding short solace in The Community, and the devastation that follows. In a world ruled by the dead, we are finally forced to finally start living. Collects 'The Walking Dead #49-96'.",
+      "Category" : "Graphic Novels",
+      "Price" : 187.64,
+      "Stock" : 123,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/walkingdead.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-2",
+      "Title" : "Deadpool Kills The Marvel Universe",
+      "Author" : "Cullen Bunn , Dalibor Talajic",
+      "Description" : "What if everything you thought was funny about Deadpool was actually just disturbing? What if he decided to kill everyone and everything that makes up the Marvel Universe? What if he actually pulled it off? Would that be FUN for you? The Merc with a Mouth takes a turn for the twisted in a horror comic like no other! Collecting DEADPOOL KILLS THE MARVEL UNIVERSE #1-4.",
+      "Category" : "Graphic Novels",
+      "Price" : 144.13,
+      "Stock" : 104,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/deadpool.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-3",
+      "Title" : "Wolverine: Omnibus",
+      "Author" : "Mark Millar",
+      "Description" : "Superstar writer Mark (KICK-ASS, ULTIMATES) Millar's two classic Wolverine epics are collected in one gorgeously illustrated hardcover! When Wolverine is brainwashed by Hand ninjas, he slices and dices his way through friends and foes alike, carving a swath of terror through the Marvel Universe - and ultimately resulting in an X-Man's death! Finally captured and deprogrammed, Wolverine swears vengeance against his tormentors...and the vengeance of Wolverine is a wonder to behold. Then: nobody knows what happened the night the heroes fell, but the bad guys have been calling the shots ever since. What happened to Wolverine is the biggest mystery of all. For 50 years, no one has heard from him...and in his place stands an old man called Logan. All-out action from the mind of Mark Millar! COLLECTING: Wolverine 20-32, Wolverine 66-72, Wolverine Giant -Size Old Man Logan",
+      "Category" : "Graphic Novels",
+      "Price" : 152.87,
+      "Stock" : 45,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/wolverine.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-4",
+      "Title" : "The Dressmaker",
+      "Author" : "Rosalie Ham",
+      "Description" : "Tilly Dunnage left her hometown of Dungatar in rural Australia under a black cloud of accusation. Years later Tilly, now a couturier for the Paris fashion houses, returns home to make amends with her mentally unstable mother. Mid-century Dungatar is a small town, and small towns have long memories. At first she wins over the suspicious locals with her extraordinary dressmaking skills. But when the eccentric townsfolk turn on Tilly for a second time, she decides to teach them a lesson and exact long-overdue revenge...Packed with memorable characters, acid humour and luscious clothes, The Dressmaker is an irresistible gothic tale of small-town revenge.",
+      "Category" : "Historical Fiction",
+      "Price" : 124.61,
+      "Stock" : 15,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/dressmaker.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-5",
+      "Title" : "The Hypnotist's Love Story",
+      "Author" : "Liane Moriarty",
+      "Description" : "How far would you go to keep the man of your dreams? From Liane Moriarty, the author of What Alice Forgot, The Hypnotist's Love Story is a stunning novel about love, life and knowing where to draw the line...Hypnotherapist Ellen is fascinated by what makes people tick. So when she falls in love with Patrick, the fact that he has a stalker doesn't faze her in the slightest. If anything it intrigues her, and the more she hears about Saskia, the more she wants to meet this woman. But what Ellen doesn't know is that they've already met...Saskia has been posing as one of Ellen's clients. Unable to let go of the life she so abruptly lost, she wants to know everything about the woman who took her place. And the further she inches her way into Ellen's world, the more trouble she stirs up. Ellen's love story is about to take an unexpected turn. But it's not only Saskia who doesn't know where to stop: Ellen also has to ask herself what lines she's prepared to cross to get the happy ending she's always wanted. Thought-provoking, sympathetic and smart, Liane Moriarty's The Hypnotist's Love Story is a novel for anyone who's ever loved, lost or found it hard to let go. Praise for What Alice Forgot: 'Gripping, thought-provoking and funny'. (Marie Claire). 'The perfect holiday read'. (She Magazine). 'A call to embrace life'. (Easy Living).",
+      "Category" : "Contemporary Fiction",
+      "Price" : 165.19,
+      "Stock" : 20,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/hypnotist.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-6",
+      "Title" : "The Ladybird Book of the Hangover",
+      "Author" : "Jason Hazeley , Joel Morris",
+      "Description" : "From bestselling authors Jason Hazeley and Joel Morris - a nugget of wisdom in the phenomenal Ladybirds for Grown Ups series. This delightful book is the latest in the series of Ladybird books which have been specially planned to help grown-ups with the world about them. The large clear script, the careful choice of words, the frequent repetition and the thoughtful matching of text with pictures all enable grown-ups to think they have taught themselves to cope. Featuring original Ladybird artwork alongside brilliantly funny, brand new text. Also available: How it Works: The Husband How it Works: The Wife How it Works: The Mum The Ladybird Book of the Mid-Life Crisis The Ladybird Book of the Hangover The Ladybird Book of Mindfulness The Ladybird Book of the Shed The Ladybird Book of Dating The Ladybird Book of the Hipster",
+      "Category" : "Parodies & Spoofs",
+      "Price" : 112.30,
+      "Stock" : 57,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/ladybird.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-7",
+      "Title" : "Originals : How Non-Conformists Change the World",
+      "Author" : "Adam Grant",
+      "Description" : "New York Times Bestseller! 'Originals is one of the most important and captivating books I have ever read, full of surprising and powerful ideas. It will not only change the way you see the world; it might just change the way you live your life. And it could very well inspire you to change your world.' (Sheryl Sandberg, bestselling author of Lean In). The New York Times bestselling author examines how people can drive creative, moral, and organisational progress - and how leaders can encourage originality in their organisations. How can we originate new ideas, policies and practices without risking it all? Adam Grant shows how to improve the world by championing novel ideas and values that go against the grain, battling conformity, and bucking outdated traditions. Using surprising studies and stories spanning business, politics, sports, and entertainment, Grant explores how to recognize a good idea, speak up without getting silenced, build a coalition of allies, choose the right time to act, and manage fear and doubt. Parents will show more",
+      "Category" : "Management: Leadership & Motivation",
+      "Price" : 237.88,
+      "Stock" : 38,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/originals.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-8",
+      "Title" : "The Kinfolk Home",
+      "Author" : "Nathan Williams",
+      "Description" : "Interest in home design has been on the rise for some time, but Kinfolk's focus on slowing down and creating a more intentional, beautiful home is where the attention is shifting. Through luscious photographs and insightful interviews, the author takes us into 40 homes around the world, from the Americas to Europe, Asia to Africa, ending in Australia. The homes range from an old cabin in the woods to clean-lined modern apartments, from singles living in small spaces to sprawling, multi-generational houses in the country. Each will feel unmistakably Kinfolk.",
+      "Category" : "Interior Design, Decor & Style Guides",
+      "Price" : 59.38,
+      "Stock" : 38,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/kinfolk.jpg"
+    }, {
+      "ISBN": "ISBN 90-70002-33-9",
+      "Title" : "Monochrome Home : Elegant Interiors in Black and White",
+      "Author" : "Hilary Robertson",
+      "Description" : "Sought-after interiors stylist Hilary Robertson celebrates the stylish simplicity of the monochromatic home - elegant interiors in black, white, and every shade of grey in between. In the first chapter, Living in Black and White, Hilary analyzes successful monochrome interiors, providing moodboards for different schemes. Next, In the Mix takes a closer look at the effective tools of texture, light, and scale and pattern and the roles that they have to play. The third chapter, The Dark Room, visits real homes that feature darker monochrome palettes, while, following on, Let there be Light provides examples of homes with a whiter, brighter approach. Finally, in Monochrome Home Hilary Robertson shows how to bring the look right up to date, visiting the fabulously inspiring homes of artists and designers from Europe to the US.",
+      "Category" : "Interior Design, Decor & Style Guides",
+      "Price" : 55.73,
+      "Stock" : 97,
+      "Status" : "Available",
+      "imageUrl" : "/assets/uploads/product/Monochrome.jpg"
     })
     .then(() => {
       console.log('finished populating products');
