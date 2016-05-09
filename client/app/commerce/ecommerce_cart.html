@@ -48,7 +48,8 @@
                                             {{cart.Product.Description}}
                                         </p>
                                         <div class="m-t-sm">
-                                            <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
+                                            <a confirmed-click="deleteFromCart(cart._id)" ng-confirm-click="Do yo want to delete {{cart.Product.ISBN}} - {{cart.Product.Title}} ?" 
+                                            class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
                                         </div>
                                     </td>
 
@@ -58,9 +59,8 @@
                                     <td width="65">
                                       {{cart.Qty}}
                                         
-                                    <select name="qty" id="qty" class="form-control" ng-model="cart.Qty">
-                                      <option value="">Please select Qty</option>
-                                      <option ng-repeat="i in getQtyList(cart.Product.Stock) track by $index" value="{{$index+1}}" ng-selected="{{ cart.Qty === $index+1 }}">{{$index+1}}</option>
+                                    <select name="qty" id="qty" class="form-control" ng-model="cart.Qty"
+                                      ng-options="n for n in [] | range:1:cart.Product.Stock">
                                     </select>
                                   
                                     </td>

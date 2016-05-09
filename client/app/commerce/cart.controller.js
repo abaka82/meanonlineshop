@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('meanonlineshopApp')
-  .controller('CartController', function ($scope, $filter, Product, Cart, Auth){
+  .controller('CartController', function ($scope, $state, $filter, Product, Cart, Auth, toastr){
 
   // Use the Cart $resource to fetch all cart for user
    $scope.carts = Cart.searchByUser({id: Auth.getCurrentUser()._id});
@@ -41,6 +41,14 @@ angular.module('meanonlineshopApp')
    $scope.hoverOut = function(){
         this.hoverTitle = false;
    };
+   
+   
+   $scope.deleteFromCart = function(id) {
+      Cart.delete({id: id}, function success(/* value, responseHeaders */) {
+        $state.reload();
+        toastr.success('One cart item has been deleted');
+      }, errorHandler($scope));
+   };
 })
 
 .filter('startFrom', function() {
@@ -48,4 +56,14 @@ angular.module('meanonlineshopApp')
         start = +start; //parse to int
         return input.slice(start);
     }
+})
+
+.filter('range', function() {
+  return function(input, min, max) {
+    min = parseInt(min); //Make string input int
+    max = parseInt(max);
+    for (var i=min; i<=max; i++)
+      input.push(i);
+    return input;
+  };
 });

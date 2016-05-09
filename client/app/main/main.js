@@ -142,7 +142,7 @@ angular.module('meanonlineshopApp')
             templateUrl: "app/commerce/ecommerce_product_details.html",
             data: { pageTitle: 'E-commerce Product detail' },
             controller: 'ProductDetailsController',
-            controllerAs: 'vm',
+           // controllerAs: 'vm',
             authenticate: true
         })
         .state('commerce.payments', {

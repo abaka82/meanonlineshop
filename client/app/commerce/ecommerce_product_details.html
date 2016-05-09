@@ -15,7 +15,7 @@
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
-    <form name="form" ng-submit="vm.addToCart(form)" novalidate>
+    <form name="form" ng-submit="addToCart(form)" novalidate>
     <div class="row">
         <div class="col-lg-12">
 
@@ -29,7 +29,7 @@
 
                                 <div>
                                     <div class="image-imitation">
-                                       <img src="{{vm.product.imageUrl}}" alt="{{vm.product.Iitle}}" class="img-responsive" style="margin-left:auto;margin-right:auto;">
+                                       <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive" style="margin-left:auto;margin-right:auto;">
                                     </div>
                                 </div>
    
@@ -39,36 +39,36 @@
                         <div class="col-md-7">
 
                             <h2 class="font-bold m-b-xs">
-                               {{vm.product.Title}}
+                               {{product.Title}}
                             </h2>
                             <div class="m-t-md">
-                                <h2 class="product-main-price"> {{vm.product.Price | currency}} <small class="text-muted">Exclude Tax</small> </h2>
+                                <h2 class="product-main-price"> {{product.Price | currency}} <small class="text-muted">Exclude Tax</small> </h2>
                             </div>
                             <hr>
 
                             <h4>Product description</h4>
 
                             <div class="small text-muted">
-                                  {{vm.product.Description}}
+                                  {{product.Description}}
                             </div>
                             <dl class="small m-t-md">
                                 <dt>Category</dt>
-                                <dd>{{vm.product.Category}}</dd>
+                                <dd>{{product.Category}}</dd>
                                 <dt>Author</dt>
-                                <dd>{{vm.product.Author}}</dd>
+                                <dd>{{product.Author}}</dd>
                                 <dt>Stock</dt>
-                                <dd>{{vm.product.Stock}}</dd>
+                                <dd>{{product.Stock}}</dd>
                                 <dt>Status</dt>
-                                <dd>{{vm.product.Status}}</dd>
+                                <dd>{{product.Status}}</dd>
                             </dl>
                             <hr>
 
                             <div class="row">                              
                                <div class="col-md-2"><h4>Qty</h4></div>
                                <div class="col-md-5">
-                                  <select name="qty" id="qty" class="form-control" ng-model="vm.cart.Qty">
+                                  <select name="qty" id="qty" class="form-control" ng-model="cart.Qty">
                                     <option value="">Please select Qty</option>
-                                    <option ng-repeat="i in vm.getQtyList(vm.product.Stock) track by $index" value="{{$index+1}}">{{$index+1}}</option>
+                                    <option ng-repeat="i in getQtyList(product.Stock) track by $index" value="{{$index+1}}">{{$index+1}}</option>
                                   </select>
                                </div>
                             </div>
