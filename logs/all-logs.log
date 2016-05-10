@@ -39,3 +39,7 @@
 {"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-03T02:48:18.963Z"}
 {"level":"debug","message":"Product.controller - entity: {\"_id\":\"572810ab54c381001f1d6e84\",\"ISBN\":\"ISBN 90-70002-32-3\",\"Title\":\"anrf\",\"Author\":\"adadasda\",\"Description\":\"fsaasdasdas\",\"Category\":\"asdasdas\",\"Price\":231,\"Stock\":3,\"Status\":\"Available\",\"__v\":0,\"imageUrl\":\"/assets/uploads/product/m9Ffp9bzeitJBB4uQPfXs_D4.jpg\"}","timestamp":"2016-05-03T02:48:18.965Z"}
 {"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/m9Ffp9bzeitJBB4uQPfXs_D4.jpg","timestamp":"2016-05-03T02:48:18.966Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-09T02:56:23.523Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-09T02:56:23.525Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/Xrb1G459_Gp-arnyvJGOLsWx.jpg\",\"_id\":\"572ffc573dcc9e642226b3d5\",\"Title\":\"tes\",\"ISBN\":\"ISBN 90-70002-34-6\",\"Author\":\"asdsad\",\"Description\":\"asdfasfasdasdasdasd\",\"Category\":\"asdasdasdasdasasdasasd\",\"Price\":345.67,\"Stock\":2,\"Status\":\"Available\",\"__v\":0}","timestamp":"2016-05-09T02:56:23.530Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/Xrb1G459_Gp-arnyvJGOLsWx.jpg","timestamp":"2016-05-09T02:56:23.531Z"}

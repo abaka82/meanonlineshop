@@ -35,8 +35,8 @@ angular.module('meanonlineshopApp')
       .state('signup', {
         url: '/signup',
         templateUrl: 'app/account/signup/signup.html',
-        controller: 'SignupController',
-        controllerAs: 'vm'
+        controller: 'SignupController'
+        //controllerAs: 'vm'
       })
       .state('index.settings', {
         url: '/settings',

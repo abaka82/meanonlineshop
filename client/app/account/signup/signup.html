@@ -16,74 +16,85 @@
               <h3>Register</h3>
             </div>
             <p>Create account to see it in action.</p>
-              <form  class="m-t" name="form" role="form" ng-submit="vm.register(form)" novalidate>
+              <form  class="m-t" name="form" role="form" ng-submit=" register(form)" novalidate>
 
               <!-- First Name -->
-                <div class="form-group" ng-class="{ 'has-success': form.firstname.$valid && vm.submitted,
-                                                    'has-error': form.firstname.$invalid && vm.submitted }">
-                  <input type="text" name="firstname" placeholder="First Name" class="form-control" ng-model="vm.user.firstname"
+                <div class="form-group" ng-class="{ 'has-success': form.firstname.$valid &&  submitted,
+                                                    'has-error': form.firstname.$invalid &&  submitted }">
+                  <input type="text" name="firstname" placeholder="First Name" class="form-control" ng-model=" user.firstname"
                         required/>
-                  <p class="help-block" ng-show="form.firstname.$error.required && vm.submitted">
+                  <p class="help-block" ng-show="form.firstname.$error.required &&  submitted">
                     A first name is required
                   </p>
                 </div>
                 <!-- End First Name -->
 
                 <!-- Last Name -->
-                  <div class="form-group" ng-class="{ 'has-success': form.lastname.$valid && vm.submitted,
-                                                    'has-error': form.lastname.$invalid && vm.submitted }">
+                  <div class="form-group" ng-class="{ 'has-success': form.lastname.$valid &&  submitted,
+                                                    'has-error': form.lastname.$invalid &&  submitted }">
                 
-                  <input type="text" name="lastname" placeholder="Last Name"  class="form-control" ng-model="vm.user.lastname"
+                  <input type="text" name="lastname" placeholder="Last Name"  class="form-control" ng-model=" user.lastname"
                         required/>
-                  <p class="help-block" ng-show="form.lastname.$error.required && vm.submitted">
+                  <p class="help-block" ng-show="form.lastname.$error.required &&  submitted">
                     A last name is required
                   </p>
                 </div>
                 <!-- End Last Name -->
 
                 <!-- Email -->
-                <div class="form-group" ng-class="{ 'has-success': form.email.$valid && vm.submitted,
-                                                    'has-error': form.email.$invalid && vm.submitted }">
+                <div class="form-group" ng-class="{ 'has-success': form.email.$valid &&  submitted,
+                                                    'has-error': form.email.$invalid &&  submitted }">
                   
-                  <input type="email" name="email" placeholder="Email"  class="form-control" ng-model="vm.user.email"
+                  <input type="email" name="email" placeholder="Email"  class="form-control" ng-model=" user.email"
                         required
                         mongoose-error/>
-                  <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
+                  <p class="help-block" ng-show="form.email.$error.email && submitted">
                     Doesn't look like a valid email.
                   </p>
-                  <p class="help-block" ng-show="form.email.$error.required && vm.submitted">
+                  <p class="help-block" ng-show="form.email.$error.required && submitted">
                     What's your email address?
                   </p>
                   <p class="help-block" ng-show="form.email.$error.mongoose">
-                    {{ vm.errors.email }}
+                    {{  errors.email }}
                   </p>
                 </div>
                 <!-- End Email  -->
 
                 <!-- Password -->
-                <div class="form-group" ng-class="{ 'has-success': form.password.$valid && vm.submitted,
-                                                    'has-error': form.password.$invalid && vm.submitted }">
+                <div class="form-group" ng-class="{ 'has-success': form.password.$valid &&  submitted,
+                                                    'has-error': form.password.$invalid &&  submitted }">
                   
-                  <input type="password" name="password" placeholder="Password"  class="form-control" ng-model="vm.user.password"
+                  <input type="{{inputType}}" name="password" id="password" placeholder="Password"  class="form-control" ng-model="user.password"
                         ng-minlength="6"
+                        ng-maxlength="32"
                         required
                         mongoose-error/>
+
+                  <input type="checkbox" id="checkbox" ng-model="passwordCheckbox" ng-click="hideShowPassword()" />
+                  <label for="checkbox" ng-if="passwordCheckbox">Hide password</label>
+                  <label for="checkbox" ng-if="!passwordCheckbox">Show password</label>  
+
+                      <ul id="strength" check-strength=" user.password"></ul>
                   <p class="help-block"
-                    ng-show="(form.password.$error.minlength || form.password.$error.required) && vm.submitted">
+                    ng-show="(form.password.$error.minlength || form.password.$error.required) &&  submitted">
                     Password must be at least 6 characters.
                   </p>
+                  <p class="help-block"
+                    ng-show="(form.password.$error.maxlength || form.password.$error.required) &&  submitted">
+                    Password max length is 32 characters.
+                  </p>
                   <p class="help-block" ng-show="form.password.$error.mongoose">
-                    {{ vm.errors.password }}
+                    {{  errors.password }}
                   </p>
                 </div>
               
-                <div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted,
-                                                    'has-error': form.confirmPassword.$invalid && vm.submitted }">
-                  <input type="password" name="confirmPassword" placeholder="Confirm Password"  class="form-control" ng-model="vm.user.confirmPassword"
-                        match="vm.user.password"
+                <div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid &&  submitted,
+                                                    'has-error': form.confirmPassword.$invalid &&  submitted }">
+                  <input type="password" name="confirmPassword" placeholder="Confirm Password"  class="form-control" ng-model="user.confirmPassword"
+                        match="user.password"
                         ng-minlength="6" required/>
                   <p class="help-block"
-                    ng-show="form.confirmPassword.$error.match && vm.submitted">
+                    ng-show="form.confirmPassword.$error.match &&  submitted">
                     Passwords must match.
                   </p>
                 </div>
