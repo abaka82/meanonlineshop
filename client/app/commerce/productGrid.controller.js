@@ -13,7 +13,15 @@ $scope.sorts = "Select order by";
 $scope.predicate = '';
 
 $scope.order = function(predicate) {
-            if (predicate === "A to Z"){
+            if (predicate === "Newest Product"){
+              $scope.predicate = "CreationDate";
+              $scope.reverse = true;
+            }
+            else if (predicate === "Oldest Product"){
+              $scope.predicate = "CreationDate";
+              $scope.reverse = false;
+            }
+            else if (predicate === "A to Z"){
               $scope.predicate = "Title";
               $scope.reverse = false;
             }
@@ -58,13 +66,12 @@ $scope.getData = function () {
     this.products.splice(this.products.indexOf(product), 1);
   }  
 
-
   $scope.items = {
     "type": "select", 
     "name": "Page Size",
-    "value": 8, 
-    "values": [ 8, 10, 15, 20] 
-  }; 
+    "value": 12, 
+    "values": [ 12, 16, 20, 24, 28] 
+  };  
 
  $scope.pageSize = $scope.items.value;
   
