@@ -4,7 +4,10 @@
 var mongoose = require('bluebird').promisifyAll(require('mongoose'));
 
 var ProductSchema = new mongoose.Schema({
-  ISBN: String,
+  ISBN: {
+    type: String,
+    unique: 'The specified ISBN is already in use.'
+  },
   Title: String,
   Author: String,
   Description: String,
@@ -18,7 +21,7 @@ var ProductSchema = new mongoose.Schema({
 });
 
 // Validate ISBN is not taken
-ProductSchema
+/*ProductSchema
   .path('ISBN')
   .validate(function(value, respond) {
     var self = this;
@@ -35,6 +38,6 @@ ProductSchema
       .catch(function(err) {
         throw err;
       });
-  }, 'The specified ISBN is already in use.');
+  }, 'The specified ISBN is already in use.');*/
 
 export default mongoose.model('Product', ProductSchema);

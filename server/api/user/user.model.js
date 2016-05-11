@@ -6,11 +6,18 @@ mongoose.Promise = require('bluebird');
 import {Schema} from 'mongoose';
 
 var UserSchema = new Schema({
-  firstname: String,
-  lastname: String,
+  firstname: { 
+    type: String,
+    trim: true
+  },
+  lastname: { 
+    type: String,
+    trim: true
+  },
   email: {
     type: String,
-    lowercase: true
+    lowercase: true,
+    maxlength: 50
   },
   role: {
     type: String,
@@ -18,7 +25,8 @@ var UserSchema = new Schema({
   },
   password: {
     type: String,
-    minlength: 6
+    minlength: 6,
+    maxlength: 32
   },
   provider: String,
   salt: String

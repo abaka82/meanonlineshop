@@ -63,12 +63,12 @@ angular.module('meanonlineshopApp')
                 if (scope.form.password.$modelValue === undefined) {
                     iElement.css({ "display": "none"  });
                 } else {
-                    var c = strength.getColor(strength.mesureStrength(scope.form.password.$modelValue));
+                    scope.c = strength.getColor(strength.mesureStrength(scope.form.password.$modelValue));
                     iElement.css({ "display": "inline" });
                     iElement.children('li')
                         .css({ "background": "#DDD" })
-                        .slice(0, c.idx)
-                        .css({ "background": c.col });
+                        .slice(0, scope.c.idx)
+                        .css({ "background": scope.c.col });
                 }
             });
 
@@ -103,7 +103,7 @@ angular.module('meanonlineshopApp')
   $scope.register = function(form) {
     $scope.submitted = true;
 
-    if (form.$valid) {
+    if (form.$valid && $scope.c.idx == 5) {
       Auth.createUser({
         firstname: $scope.user.firstname,
         lastname: $scope.user.lastname,

@@ -39,21 +39,27 @@
                      <p class="help-block" ng-show="form.Isbn.$error.required && submitted">
                       ISBN is required
                     </p>
-                    <input type="text" id="Isbn"  name="Isbn"  placeholder="ex. ISBN 90-70002-34-5 or ISBN 90-70002-34-x"  class="form-control" ng-pattern="/^ISBN\s(?=[-0-9xX ]{13}$)(?:[0-9]+[- ]){3}[0-9]*[xX0-9]$/" ng-model="product.ISBN" required>
+                    <input type="text" id="Isbn"  name="Isbn"  placeholder="For ISBN 13 use prefix 978 or 979"  class="form-control" ng-pattern="/^ISBN\s(97(8|9))?\d{9}(\d|X)$/" ng-model="product.ISBN" required>
   <span style="color:red" ng-show="form.Isbn.$error.pattern">
-                      Please insert the correct format for ISBN</span>
+                      Please insert the correct ISBN format</span>
                 </div>
             </div>
            <div>
                 <div class="form-group"
                   ng-class="{ 'has-success': form.NewProduct.$valid && submitted,
-                 'has-error': form.NewProduct.$invalid && submitted }"
+                 'has-error': (form.NewProduct.$invalid && submitted) || (form.NewProduct.$error.maxlength)  }"
                 >
-                    <label class="control-label" for="product_name">Product Name</label>
+                    <label class="control-label" for="product_name">Product Title</label>
                      <p class="help-block" ng-show="form.NewProduct.$error.required && submitted">
-                      A product name is required
+                      A product title is required
                     </p>
-                    <input type="text" id="NewProduct"  name="NewProduct" value="" placeholder="Add a new product here." class="form-control" ng-model="product.Title" required>
+                     <p class="help-block" ng-show="form.NewProduct.$error.maxlength">
+                      Product title max length is 70 characters
+                    </p>
+                     <p class="help-block" ng-show="form.NewProduct.$error.minlength">
+                      Product title min length is 1 characters
+                    </p>
+                    <input type="text" id="NewProduct"  name="NewProduct" value="" placeholder="Add a new product here." class="form-control" ng-model="product.Title" ng-maxlength="70" ng-minlength="1" required>
                 </div>
             </div>
             <div >
@@ -65,7 +71,13 @@
                     <p class="help-block" ng-show="form.Author.$error.required && submitted">
                       Author is required
                     </p>
-                    <input type="text" id="Author" name="Author" value="" placeholder="Author" class="form-control" ng-model="product.Author" required>
+                     <p class="help-block" ng-show="form.NewProduct.$error.maxlength">
+                      Author max length is 42 characters
+                    </p>
+                     <p class="help-block" ng-show="form.NewProduct.$error.minlength">
+                      Author min length is 1 characters
+                    </p>
+                    <input type="text" id="Author" name="Author" value="" placeholder="Author" class="form-control" ng-model="product.Author" ng-maxlength="42" ng-minlength="1" required>
                 </div>
             </div>
             <div >
@@ -75,9 +87,12 @@
                 >
                     <label class="control-label" for="Description">Description</label>
                      <p class="help-block" ng-show="form.Description.$error.required && submitted">
-                      The Description is required
+                      Description is required
                     </p>
-                    <textarea type="text" id="Description" name="Description" value="" placeholder="Description" class="form-control" ng-model="product.Description" required></textarea>
+                     <p class="help-block" ng-show="form.NewProduct.$error.maxlength">
+                      Description max length is 20000 characters
+                    </p>
+                    <textarea type="text" id="Description" name="Description" value="" placeholder="Description" class="form-control" ng-model="product.Description" ng-maxlength="2000" required></textarea>
                 </div>
             </div>
             <div >
@@ -87,9 +102,11 @@
                 >
                     <label class="control-label" for="Category">Category</label>
                     <p class="help-block" ng-show="form.Category.$error.required && submitted">
-                      The Category is required
+                      Please select the category
                     </p>
-                      <input type="text" id="Category" name="Category" value="" placeholder="Category" class="form-control" ng-model="product.Category" required>
+                      <select  id="Category" name="Category" placeholder="Category" class="form-control" ng-model="product.Category" ng-options="c.value as c.name for c in categories" required>
+                        <option value="" >-- Select category --</option>
+                      </select>
                 </div>
             </div>
              
@@ -101,11 +118,19 @@
                 >
                     <label class="control-label" for="Price">Price</label>
                      <p class="help-block" ng-show="form.Price.$error.required && submitted">
-                      Number of price is required
+                      Price is required
                     </p>
-                      <input type="number" id="Price" name="Price" value="" placeholder="Price, example: 2300 or 23.22" class="form-control" ng-model="product.Price"  ng-pattern="/^\$?[0-9]+(\.[0-9][0-9])?$/" required>
-                     <span style="color:red" ng-show="form.Price.$error.pattern">
-                      Please insert the correct format</span>
+                     <p class="help-block" ng-show="form.Price.$error.pattern">
+                      Please insert the correct format
+                    </p>
+                    <p class="help-block" ng-show="form.Price.$error.max">
+                      Max price is AUD 50000000.00
+                    </p>
+                      <p class="help-block" ng-show="form.Price.$error.min">
+                      Min price is AUD 0.01
+                    </p>
+                      <input type="number" id="Price" name="Price" value="" placeholder="Price, example: 2300 or 23.22" class="form-control" ng-max="50000000.00" ng-min="0.01" ng-model="product.Price"  ng-pattern="/^\$?[0-9]+(\.[0-9][0-9])?$/" required>
+                    
                 </div>
             </div>
              <div >
@@ -117,9 +142,11 @@
                      <p class="help-block" ng-show="form.Stock.$error.required && submitted">
                       Number of stock is required
                     </p>
-                      <input type="number" id="Stock" name="Stock" value="" placeholder="Stock" class="form-control" ng-model="product.Stock" ng-pattern="/^\d*$/" ng-change="doCheck()"  min="0" max="100" required>
-                      <span style="color:red" ng-show="form.Stock.$invalid">
-                       Minimum stock is 0, Maximum stock is 100</span>
+                    <p class="help-block" ng-show="form.Stock.$error.min || form.Stock.$error.max  ">
+                       Minimum stock is 0, Maximum stock is 100
+                    </p>
+                      <input type="number" id="Stock" name="Stock" value="" placeholder="Stock" class="form-control" ng-model="product.Stock" ng-pattern="/^\d*$/" ng-min="0" ng-max="100" required>
+                      
                 </div>
             </div>
              <div >
@@ -131,9 +158,9 @@
                      <p class="help-block" ng-show="form.status.$error.required && submitted">
                       Please select status
                     </p>
-                    <select name="status" id="status" class="form-control" ng-model="product.Status" disabled >
-                        <option value="Available" selected>Available</option>
-                        <option value="Unavailable">Unavailable</option>
+                    <select name="status" id="status" class="form-control" ng-model="product.Status"  ng-init="product.Status = product.Status || 'Active'" >
+                        <option value="Active" selected>Active</option>
+                        <option value="Inactive">Inactive</option>
                     </select>
                 </div>
             </div>
@@ -199,7 +226,8 @@
            &nbsp;&nbsp; &nbsp;&nbsp;
           </td>
            <td>
-            <a class="btn btn-primary" ui-sref="admin.list_product">Cancel</a>
+            <a class="btn btn-primary" ng-show="product.ISBN || product.Title || product.Author || product.Description || product.Category || product.Price || product.Stock || product.picture " confirmed-click="cancelNewProduct()" ng-confirm-click="Do yo want to cancel?">Cancel</a>
+             <a class="btn btn-primary" ng-hide="product.ISBN || product.Title || product.Author || product.Description || product.Category || product.Price || product.Stock || product.picture" ui-sref="admin.list_product">Cancel</a>
           </td>
         </tr>
         </table>

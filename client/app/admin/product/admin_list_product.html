@@ -118,17 +118,17 @@
                            
                             <td>
                             	<div style="word-wrap:break-word;width:200px;text-align: center;">
-                                {{product.Price | currency}}
+                                {{product.Price | currency:"AUD$" }}
                                 </div>
                             </td>
                             <td style="word-wrap:break-word;width:200px;text-align: center;">
                                 {{product.Stock}}
                             </td>
                             <td>
-                                <span class="label label-primary" ng-show="product.Status=='Available'">
+                                <span class="label label-primary" ng-show="product.Status=='Active'">
                                 {{product.Status}}
                             	</span>
-                            	 <span class="label" style="background-color:red;color:#FFFFFF" ng-show="product.Status=='Unavailable'">
+                            	 <span class="label" style="background-color:red;color:#FFFFFF" ng-show="product.Status=='Inactive'">
                                 {{product.Status}}
                             	</span>
                             </td>

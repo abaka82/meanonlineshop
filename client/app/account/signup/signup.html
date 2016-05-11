@@ -73,8 +73,9 @@
                 <!-- End Email  -->
 
                 <!-- Password -->
+
                 <div class="form-group" ng-class="{ 'has-success': form.password.$valid &&  submitted,
-                                                    'has-error': form.password.$invalid &&  submitted }">
+                                                    'has-error': (form.password.$invalid &&  submitted) || (c.idx < 5) }">
                   
                   <input type="{{inputType}}" name="password" id="password" placeholder="Password"  class="form-control" ng-model="user.password"
                         ng-minlength="6"
@@ -90,6 +91,10 @@
                   <p class="help-block"
                     ng-show="form.password.$error.minlength" >
                     Password must be at least 6 characters.
+                  </p>
+                  <p class="help-block"
+                    ng-show="c.idx < 5" >
+                    Password must be strong.
                   </p>
                   <p class="help-block"
                     ng-show="form.password.$error.maxlength">

@@ -17,6 +17,11 @@ $scope.currentPage = 0;
 //$scope.product.picture = {};
  var orderBy = $filter('orderBy');
 
+ $scope.categories = [
+    { value: "Kids", name: "Kids" },
+    { value: "Fiction", name: "Fiction" }
+];
+
 /* $scope.$watch('files', function (files) {
     $scope.formUpload = false;
     if (files != null) {
@@ -115,7 +120,10 @@ $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
             }
         }
   
-      
+      $scope.cancelNewProduct = function() {
+           $state.go('admin.list_product');
+        };
+
       $scope.idSelectedVote = null;
       $scope.setSelected = function (idSelectedVote) {
          $scope.idSelectedVote = idSelectedVote;
@@ -160,6 +168,11 @@ $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
     // Use the Product $resource to fetch detail products
     $scope.id = $stateParams.id
     $scope.product = Product.get({id: $scope.id});
+
+    $scope.categories = [
+    { value: "Kids", name: "Kids" },
+    { value: "Fiction", name: "Fiction" }
+    ];
 
     $scope.editProduct = function(form){
         $scope.submitted = true; 
