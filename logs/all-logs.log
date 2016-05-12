@@ -51,3 +51,38 @@
 {"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-11T03:42:58.719Z"}
 {"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/ZnN1UlzPLxiI8J8UPshlWxlT.jpg\",\"_id\":\"5732aa428ab06890215058ac\",\"Status\":\"Active\",\"ISBN\":\"ISBN 9783456532345\",\"Title\":\"tessssss\",\"Author\":\"tessssssssssssss\",\"Description\":\"sssssasfdccccccccccccccccccccccccccccccccccccdassssssssssssssssssssssssssssssssssgggggggggggg\",\"Category\":\"Kids\",\"Price\":558.65,\"Stock\":12,\"__v\":0,\"CreationDate\":\"2016-05-11T03:42:58.682Z\"}","timestamp":"2016-05-11T03:42:58.722Z"}
 {"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/ZnN1UlzPLxiI8J8UPshlWxlT.jpg","timestamp":"2016-05-11T03:42:58.723Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-11T07:03:45.120Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-11T07:03:45.122Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"5732d893a98762e00b542324\",\"Status\":\"Inactive\",\"ISBN\":\"ISBN 9783456532345\",\"Title\":\"asdas\",\"Author\":\"asfasd\",\"Description\":\"asdas\",\"Category\":\"Kids\",\"Price\":32323,\"Stock\":34,\"__v\":0,\"CreationDate\":\"2016-05-11T07:00:35.967Z\"}","timestamp":"2016-05-11T07:03:45.129Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-11T07:03:45.129Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-11T07:19:14.973Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-11T07:19:14.976Z"}
+{"level":"debug","message":"Product.controller - file: [object Object],[object Object],[object Object]","timestamp":"2016-05-11T07:19:14.979Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"5732dcf00516bde40d552ac8\",\"Status\":\"Active\",\"ISBN\":\"ISBN 9783456532345\",\"Title\":\"hgfgfhgfhf\",\"Author\":\"fghgfhgfhgfhgf\",\"Description\":\"gfhgfhgfh\",\"Category\":\"Kids\",\"Price\":4,\"Stock\":4,\"__v\":0,\"CreationDate\":\"2016-05-11T07:19:12.869Z\"}","timestamp":"2016-05-11T07:19:14.981Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-11T07:19:14.981Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-11T07:22:53.244Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-11T07:22:53.252Z"}
+{"level":"debug","message":"Product.controller - file: client\\assets\\uploads\\product\\wMpdARPfrORN5SgR96UWn7B0.jpg","timestamp":"2016-05-11T07:22:53.258Z"}
+{"level":"debug","message":"Product.controller - file: client\\assets\\uploads\\product\\aQBvPbaTNicWrdVAF7lCmym6.jpg","timestamp":"2016-05-11T07:22:53.264Z"}
+{"level":"debug","message":"Product.controller - file: client\\assets\\uploads\\product\\W0BcA1hfNPDQVd7HGKm0C68c.gif","timestamp":"2016-05-11T07:22:53.265Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl\":\"/assets/uploads/product/undefined\",\"_id\":\"5732ddc8ae4523180326fce0\",\"Status\":\"Active\",\"ISBN\":\"ISBN 9783456532345\",\"Title\":\"ghgnvcvn\",\"Author\":\"cvbcvbcvbcv\",\"Description\":\"cvbcvbcvbcv\",\"Category\":\"Fiction\",\"Price\":445,\"Stock\":45,\"__v\":0,\"CreationDate\":\"2016-05-11T07:22:48.002Z\"}","timestamp":"2016-05-11T07:22:53.268Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/undefined","timestamp":"2016-05-11T07:22:53.277Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-11T07:32:32.127Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-11T07:32:32.130Z"}
+{"level":"debug","message":"Product.controller - simpant file ke entity 1: client\\assets\\uploads\\product\\_jrn7abw_TkirD8K-kOpITrk.jpg","timestamp":"2016-05-11T07:32:32.134Z"}
+{"level":"debug","message":"Product.controller - simpant file ke entity 2: client\\assets\\uploads\\product\\l65su0VG0d57LHd1ptif7zTR.jpg","timestamp":"2016-05-11T07:32:32.134Z"}
+{"level":"debug","message":"Product.controller - simpant file ke entity 3: client\\assets\\uploads\\product\\gH-pbUD-R5pYAYCFC7YPBn8D.jpg","timestamp":"2016-05-11T07:32:32.135Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl3\":\"/assets/uploads/product/gH-pbUD-R5pYAYCFC7YPBn8D.jpg\",\"imageUrl2\":\"/assets/uploads/product/l65su0VG0d57LHd1ptif7zTR.jpg\",\"imageUrl\":\"/assets/uploads/product/_jrn7abw_TkirD8K-kOpITrk.jpg\",\"_id\":\"5732e010a69325b01368e3de\",\"Status\":\"Active\",\"ISBN\":\"ISBN 9783456532345\",\"Title\":\"asdasd\",\"Author\":\"fdsdsds\",\"Description\":\"dsfdsfds\",\"Category\":\"Fiction\",\"Price\":2343,\"Stock\":33,\"__v\":0,\"CreationDate\":\"2016-05-11T07:32:32.045Z\"}","timestamp":"2016-05-11T07:32:32.137Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/_jrn7abw_TkirD8K-kOpITrk.jpg","timestamp":"2016-05-11T07:32:32.139Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-11T08:30:20.985Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-11T08:30:20.988Z"}
+{"level":"debug","message":"Product.controller - simpant file ke entity 1: client\\assets\\uploads\\product\\EQTmT_ursE4F0xTjXwnzZyem.jpg","timestamp":"2016-05-11T08:30:20.993Z"}
+{"level":"debug","message":"Product.controller - simpant file ke entity 2: client\\assets\\uploads\\product\\BOylrJ5o_ymeufayGUYNANzn.jpg","timestamp":"2016-05-11T08:30:20.995Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl2\":\"/assets/uploads/product/BOylrJ5o_ymeufayGUYNANzn.jpg\",\"imageUrl\":\"/assets/uploads/product/EQTmT_ursE4F0xTjXwnzZyem.jpg\",\"_id\":\"5732ed9c5070d71c2b354f1e\",\"Status\":\"Active\",\"ISBN\":\"ISBN 9783456532345\",\"Title\":\"fgdfg\",\"Author\":\"dfgdfg\",\"Description\":\"dfgdf\",\"Category\":\"Fiction\",\"Price\":34,\"Stock\":32,\"__v\":0,\"CreationDate\":\"2016-05-11T08:30:20.920Z\"}","timestamp":"2016-05-11T08:30:20.996Z"}
+{"level":"debug","message":"Product.controller - imageUrl: /assets/uploads/product/EQTmT_ursE4F0xTjXwnzZyem.jpg","timestamp":"2016-05-11T08:30:20.998Z"}
+{"level":"debug","message":"Product.controller - Upload function","timestamp":"2016-05-12T02:22:13.529Z"}
+{"level":"debug","message":"Product.controller - saveFile function","timestamp":"2016-05-12T02:22:13.535Z"}
+{"level":"debug","message":"Product.controller - simpant file ke entity 1: client\\assets\\uploads\\product\\VbJbMs0TtXgsiiBLVpVFDgh4.jpg","timestamp":"2016-05-12T02:22:13.540Z"}
+{"level":"debug","message":"Product.controller - simpant file ke entity 2: client\\assets\\uploads\\product\\WNvCJNCVp0JeRJ99NMD8wzpj.jpg","timestamp":"2016-05-12T02:22:13.541Z"}
+{"level":"debug","message":"Product.controller - entity: {\"imageUrl2\":\"/assets/uploads/product/WNvCJNCVp0JeRJ99NMD8wzpj.jpg\",\"imageUrl1\":\"/assets/uploads/product/VbJbMs0TtXgsiiBLVpVFDgh4.jpg\",\"_id\":\"5733e8d5be3509401e759196\",\"Status\":\"Active\",\"mainImage\":2,\"ISBN\":\"ISBN 9783456532345\",\"Title\":\"asdasd\",\"Author\":\"asdasd\",\"Description\":\"dsfds\",\"Category\":\"Kids\",\"Price\":2343,\"Stock\":34,\"__v\":0,\"CreationDate\":\"2016-05-12T02:22:13.444Z\"}","timestamp":"2016-05-12T02:22:13.542Z"}
+{"level":"debug","message":"Product.controller - imageUrl: undefined","timestamp":"2016-05-12T02:22:13.543Z"}

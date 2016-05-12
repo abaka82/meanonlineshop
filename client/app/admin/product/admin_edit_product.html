@@ -171,24 +171,112 @@
                     <tr>
                     <td  style="padding-top:50px;">
                       <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
-                      ngf-drag-over-class="dragover" ngf-multiple="false"
+                      ngf-drag-over-class="dragover" ngf-multiple="true"
                       ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*" >Drop product image here or click to upload button</div>
                       <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td rowspan="2">
-                      <img ngf-src="product.picture" width="170px">
+                     <!-- <img ngf-src="product.picture" width="170px">
                       <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}
                       <br></br>
                       <span>Size: {{ product.picture.size/1024/1024|number:2 }} MB </span>
-                      </div>
-                      <img src="{{product.imageUrl}}" ng-hide="product.picture" width="170px" alt="{{product.Title}}" class="img-responsive">
+                      </div>-->
+                      <table ng-repeat="image in product.picture">
+                         <tr>
+                          <td> <img ngf-src="image" width="170px" ></td>
+                         </tr>
+                         <tr>
+                          <td><div ng-show="image">{{image.name}} {{image.$error}} {{image.$errorParam}}</div></td>
+                         </tr>
+                         <tr>
+                          <td>  <span>Size: {{ image.size/1024/1024|number:2 }} MB </span></td>
+                        </tr>
+                      </table>
+                      <table>
+                        <tr>
+                          <td style=" padding-right: 20px;">
+                             <div style=" padding-bottom: 20px;" >
+                             <img src="{{product.imageUrl1}}" ng-hide="product.picture || !product.imageUrl1" width="170px" alt="{{product.Title}}" class="img-responsive">
+                               <span class="badge badge-primary" ng-show="product.mainImage==1 && product.mainImage">Primary</span>
+                             </div>
+
+                          </td>
+                          <td style=" padding-right: 20px;">
+                            <div style=" padding-bottom: 20px;" >
+                             <img src="{{product.imageUrl2}}" ng-hide="product.picture || !product.imageUrl2" width="170px" alt="{{product.Title}}" class="img-responsive">
+                             <span class="badge badge-primary" ng-show="product.mainImage==2 && product.imageUrl2">Primary</span>
+                              </div>
+                             
+                          </td >
+                          <td style=" padding-right: 20px;">
+                            <div style=" padding-bottom: 20px;" >
+                             <img src="{{product.imageUrl3}}" ng-hide="product.picture || !product.imageUrl3" width="170px" alt="{{product.Title}}" class="img-responsive">
+                              <span class="badge badge-primary" ng-show="product.mainImage==3 && product.imageUrl3">Primary</span>
+                             </div>
+                          </td>
+                          <td style=" padding-right: 20px;">
+                            <div style=" padding-bottom: 20px;" >
+                             <img src="{{product.imageUrl4}}" ng-hide="product.picture || !product.imageUrl4" width="170px" alt="{{product.Title}}" class="img-responsive">
+                              <span class="badge badge-primary" ng-show="product.mainImage==4 && product.imageUrl4">Primary</span>
+                             </div>
+                          </td>
+                          <td>
+                            <div style=" padding-bottom: 20px;" >
+                             <img src="{{product.imageUrl5}}" ng-hide="product.picture || !product.imageUrl5" width="170px" alt="{{product.Title}}" class="img-responsive">
+                              <span class="badge badge-primary" ng-show="product.mainImage==5 && product.imageUrl5">Primary</span>
+                             </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                             <div ng-show="product.imageUrl1">
+                              <button class="btn btn-info btn-circle" type="button" ng-click="product.mainImage = 1"><i class="fa fa-check"></i></button>
+                             
+                             <button class="btn btn-danger btn-circle" type="button" ng-click="product.imageUrl1 = ''"><i class="fa fa-times"></i></button>
+                             </div>
+                          </td>
+                          <td>
+                             <div ng-show="product.imageUrl2">
+                           
+                             <button class="btn btn-info btn-circle" type="button" ng-click="product.mainImage = 2"><i class="fa fa-check" ></i></button>
+                             
+                              <button class="btn btn-danger btn-circle" type="button" ng-click="product.imageUrl2 = ''"><i class="fa fa-times"></i></button>
+                             </div>
+                          </td>
+                          <td>
+                             <div ng-show="product.imageUrl3">
+                           
+                             <button class="btn btn-info btn-circle" type="button" ng-click="product.mainImage = 3"><i class="fa fa-check" ></i></button>
+                             
+                              <button class="btn btn-danger btn-circle" type="button" ng-click="product.imageUrl3 = ''"><i class="fa fa-times"></i></button>
+                             </div>
+                          </td>
+                          <td>
+                            <div ng-show="product.imageUrl4">
+                           
+                             <button class="btn btn-info btn-circle" type="button" ng-click="product.mainImage = 4"><i class="fa fa-check" ></i></button>
+                             
+                              <button class="btn btn-danger btn-circle" type="button" ng-click="product.imageUrl4 = ''"><i class="fa fa-times"></i></button>
+                             </div>
+                          </td>
+                          <td>
+                           <div ng-show="product.imageUrl5">
+                           
+                             <button class="btn btn-info btn-circle" type="button" ng-click="product.mainImage = 5"><i class="fa fa-check" ></i></button>
+                             
+                              <button class="btn btn-danger btn-circle" type="button" ng-click="product.imageUrl5 = ''"><i class="fa fa-times"></i></button>
+                             </div>
+                          </td>
+                        </tr>
+                      </table>
+                     
                     </td>
 
                     </tr>
                     <tr>
                       <td>
-                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture">Upload picture</button>
+                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture" ngf-multiple="true">Upload picture</button>
                       </td>
                     </tr>
                    </table>

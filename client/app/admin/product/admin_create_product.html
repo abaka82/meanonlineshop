@@ -179,36 +179,44 @@
                     <tr>
                     <td  style="padding-top:50px;">
                          <div ngf-select ngf-drop class="drop-box" ng-model="product.picture"
-                      ngf-drag-over-class="dragover" ngf-multiple="false"
+                      ngf-drag-over-class="dragover" ngf-multiple="true"
                       ngf-pattern="'image/*'" ngf-max-size="15MB" accept="image/*" >Drop product image here or click to upload button</div>
                       <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
                     </td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td rowspan="2" >
-                     <!-- <table ng-repeat="image in product.picture">
-                         <tr>
-                          <td> <img ngf-src="image" width="170px" ></td>
+                      <table >
+                         <tr >
+                          <td ng-repeat="image in product.picture" style="padding-right: 20px;"> 
+                           <div class="animated bounceIn">
+                            <img id="img{{$index+1}}" ngf-src="image" width="170px" >
+                            <span id="primary" ng-show="product.mainImage == $index+1 " class="badge badge-primary">Primary</span>
+                           </div>
+                           <div ng-show="image" >  
+                              {{image.$error}} {{image.$errorParam}}
+                              <span>Size: {{ image.size/1024/1024|number:2 }} MB </span>
+                            </div>
+                            <div>
+                             <button class="btn btn-info btn-circle" id="btnprimary{{$index+1}}" ng-model="checked" type="button" ng-click="product.mainImage= $index+1"><i class="fa fa-check"></i></button>
+                             
+                             <button class="btn btn-danger btn-circle" id="btndelete{{$index+1}}" type="button" ng-click="removePreview($index)"><i class="fa fa-times"></i></button>
+                            </div>
+                          </td>
                          </tr>
-                         <tr>
-                          <td><div ng-show="image">{{image.name}} {{image.$error}} {{image.$errorParam}}</div></td>
-                         </tr>
-                         <tr>
-                          <td>  <span>Size: {{ image.size/1024/1024|number:2 }} MB </span></td>
-                        </tr>
                       </table>
-                      <br></br>-->
-                      <img ngf-src="product.picture" width="170px">
+                      <br></br>
+                      <!--<img ngf-src="product.picture" width="170px">
                       <div ng-show="product.picture">{{product.picture.name}} {{product.picture.$error}} {{product.picture.$errorParam}}
                       <br></br>
                       <span>Size: {{ product.picture.size/1024/1024|number:2 }} MB </span>
-                      </div>
+                      </div>-->
                       <img src="{{product.imageUrl}}" alt="{{product.Title}}" class="img-responsive">
                     </td>
                     </tr>
                     <tr>
                       <td>
                       <!--<button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture" ngf-multiple="true">Upload picture</button>-->
-                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture" ngf-multiple="false">Upload picture</button>
+                      <button accept="image/*" type="file" class="btn btn-primary" ngf-select ngf-max-size="15MB" ng-model="product.picture" ngf-multiple="true">Upload picture</button>
                         <!--<button ng-click="liatModel()" multiple>tes</button>-->
                       </td>
                     </tr>

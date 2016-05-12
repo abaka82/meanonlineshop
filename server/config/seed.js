@@ -19,7 +19,7 @@ Product.find({}).remove()
       "Price" : 125,
       "Stock" : 10,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/PSRzNuSAQhDF8iTOn7jNQnU0.jpg"  
+      "imageUrl1" : "/assets/uploads/product/PSRzNuSAQhDF8iTOn7jNQnU0.jpg"  
     }, {
       "ISBN": "ISBN 90-70002-31-2",
       "Title" : "DK Eyewitness Travel Guide: Japan",
@@ -29,7 +29,7 @@ Product.find({}).remove()
       "Price" : 200,
       "Stock" : 15,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/IDWJJOQL9zHTCiz-WmMqhvLm.jpeg"
+      "imageUrl1" : "/assets/uploads/product/IDWJJOQL9zHTCiz-WmMqhvLm.jpeg"
     }, {
       "ISBN": "ISBN 90-70002-31-3",
       "Title" : "DK Eyewitness Travel Guide - Jerusalem, Israel, Petra, and Sinai",
@@ -39,7 +39,7 @@ Product.find({}).remove()
       "Price" : 300,
       "Stock" : 3,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/_4ORvnaagYq4SepQ7taW1Y17.jpeg"
+      "imageUrl1" : "/assets/uploads/product/_4ORvnaagYq4SepQ7taW1Y17.jpeg"
     }, {
       "ISBN": "ISBN 90-70002-31-4",
       "Title" : "DK Travel Eyewitness - Top 10 Dublin",
@@ -49,7 +49,7 @@ Product.find({}).remove()
       "Price" : 120,
       "Stock" : 2,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/95I3PweXzcgXXeaWnkm2-e1-.jpeg"
+      "imageUrl1" : "/assets/uploads/product/95I3PweXzcgXXeaWnkm2-e1-.jpeg"
     }, {
       "ISBN": "ISBN 90-70002-31-5",
       "Title" : "The Sherlock Holmes Book (Big Ideas Simply Explained)",
@@ -59,7 +59,7 @@ Product.find({}).remove()
       "Price" : 2500,
       "Stock" : 9,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/jeQMvEL_xaQgIKfAUojCPGMx.jpg"
+      "imageUrl1" : "/assets/uploads/product/jeQMvEL_xaQgIKfAUojCPGMx.jpg"
     }, {
       "ISBN": "ISBN 90-70002-31-6",
       "Title" : "Dating For Dummies",
@@ -69,7 +69,7 @@ Product.find({}).remove()
       "Price" : 56,
       "Stock" : 23,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/8ZvYNI099sByiUfSmuMewbxl.jpg"
+      "imageUrl1" : "/assets/uploads/product/8ZvYNI099sByiUfSmuMewbxl.jpg"
     }, {
       "ISBN": "ISBN 90-70002-31-7",
       "Title" : "The Complete Sherlock Holmes",
@@ -79,7 +79,7 @@ Product.find({}).remove()
       "Price" : 1000,
       "Stock" : 15,
       "Status" : "Unavailable",
-      "imageUrl" : "/assets/uploads/product/5N1mrHCDQbiz92Pt4bm_Tdcg.jpg"
+      "imageUrl1" : "/assets/uploads/product/5N1mrHCDQbiz92Pt4bm_Tdcg.jpg"
     }, {
       "ISBN": "ISBN 90-70002-31-8",
       "Title" : "MEAN Machine - A beginner's practical guide to the JavaScript stack",
@@ -89,7 +89,7 @@ Product.find({}).remove()
       "Price" : 400,
       "Stock" : 7,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/ZzIHUyjUQyj8ww4NyiUhbFug.jpeg"
+      "imageUrl1" : "/assets/uploads/product/ZzIHUyjUQyj8ww4NyiUhbFug.jpeg"
     }, {
       "ISBN": "ISBN 90-70002-31-9",
       "Title" : "Code Complete - A Practical Handbook of Software Construction, Second Edition",
@@ -99,7 +99,7 @@ Product.find({}).remove()
       "Price" : 500,
       "Stock" : 30,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/9b1ZJgFLKRFM_Re329sOPupU.jpeg"
+      "imageUrl1" : "/assets/uploads/product/9b1ZJgFLKRFM_Re329sOPupU.jpeg"
     }, {
       "ISBN": "ISBN 90-70002-32-1",
       "Title" : "Game Coding Complete 3rd Edition",
@@ -109,7 +109,7 @@ Product.find({}).remove()
       "Price" : 500,
       "Stock" : 2,
       "Status" : "Unavailable",
-      "imageUrl" : "/assets/uploads/product/lo5elFNgwlnpchvehVOk2dhG.jpeg"
+      "imageUrl1" : "/assets/uploads/product/lo5elFNgwlnpchvehVOk2dhG.jpeg"
     }, {
       "ISBN": "ISBN 90-70002-32-2",
       "Title" : "Patterns in Java - A Catalog of Reusable Design Patterns Illustrated with UML, 2nd Edition, Volume 1",
@@ -119,7 +119,7 @@ Product.find({}).remove()
       "Price" : 350,
       "Stock" : 6,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/jZ4GAzGVK0hZhzaS4YrPvRMY.jpeg"
+      "imageUrl1" : "/assets/uploads/product/jZ4GAzGVK0hZhzaS4YrPvRMY.jpeg"
     }, {
       "ISBN": "ISBN 90-70002-32-3",
       "Title" : "Introduction to Career Counselling & Coaching",
@@ -129,7 +129,7 @@ Product.find({}).remove()
       "Price" : 41424,
       "Stock" : 15,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/career counselling.jpg"
+      "imageUrl1" : "/assets/uploads/product/career counselling.jpg"
     }, {
       "ISBN": "ISBN 90-70002-32-4",
       "Title" : "The Anatomy Coloring Book",
@@ -139,7 +139,7 @@ Product.find({}).remove()
       "Price" : 77788,
       "Stock" : 100,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/anatomycoloring.jpg"
+      "imageUrl1" : "/assets/uploads/product/anatomycoloring.jpg"
     }, {
       "ISBN": "ISBN 90-70002-32-5",
       "Title" : "Illusion Town",
@@ -149,7 +149,7 @@ Product.find({}).remove()
       "Price" : 344,
       "Stock" : 65,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/illusiontown.jpg"
+      "imageUrl1" : "/assets/uploads/product/illusiontown.jpg"
     }, {
       "ISBN": "ISBN 90-70002-32-6",
       "Title" : "The Martian",
@@ -159,7 +159,7 @@ Product.find({}).remove()
       "Price" : 212,
       "Stock" : 45,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/The Martian.jpg"
+      "imageUrl1" : "/assets/uploads/product/The Martian.jpg"
     }, {
       "ISBN": "ISBN 90-70002-32-7",
       "Title" : "Saga: V. 3",
@@ -169,7 +169,7 @@ Product.find({}).remove()
       "Price" : 34,
       "Stock" : 2,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/saga.jpg"
+      "imageUrl1" : "/assets/uploads/product/saga.jpg"
     }, {
       "ISBN": "ISBN 90-70002-32-8",
       "Title" : "World War Z : An Oral History of the Zombie War",
@@ -179,7 +179,7 @@ Product.find({}).remove()
       "Price" : 76,
       "Stock" : 5,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/worldwarz.jpg"
+      "imageUrl1" : "/assets/uploads/product/worldwarz.jpg"
     }, {
       "ISBN": "ISBN 90-70002-32-9",
       "Title" : "Percy Jackson and the Lightning Thief: The Graphic Novel: Bk. 1",
@@ -189,7 +189,7 @@ Product.find({}).remove()
       "Price" : 120.23,
       "Stock" : 15,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/percy.jpg"
+      "imageUrl1" : "/assets/uploads/product/percy.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-1",
       "Title" : "The Walking Dead Compendium: Volume 2",
@@ -199,7 +199,7 @@ Product.find({}).remove()
       "Price" : 187.64,
       "Stock" : 123,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/walkingdead.jpg"
+      "imageUrl1" : "/assets/uploads/product/walkingdead.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-2",
       "Title" : "Deadpool Kills The Marvel Universe",
@@ -209,7 +209,7 @@ Product.find({}).remove()
       "Price" : 144.13,
       "Stock" : 104,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/deadpool.jpg"
+      "imageUrl1" : "/assets/uploads/product/deadpool.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-3",
       "Title" : "Wolverine: Omnibus",
@@ -219,7 +219,7 @@ Product.find({}).remove()
       "Price" : 152.87,
       "Stock" : 45,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/wolverine.jpg"
+      "imageUrl1" : "/assets/uploads/product/wolverine.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-4",
       "Title" : "The Dressmaker",
@@ -229,7 +229,7 @@ Product.find({}).remove()
       "Price" : 124.61,
       "Stock" : 15,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/dressmaker.jpg"
+      "imageUrl1" : "/assets/uploads/product/dressmaker.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-5",
       "Title" : "The Hypnotist's Love Story",
@@ -239,7 +239,7 @@ Product.find({}).remove()
       "Price" : 165.19,
       "Stock" : 20,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/hypnotist.jpg"
+      "imageUrl1" : "/assets/uploads/product/hypnotist.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-6",
       "Title" : "The Ladybird Book of the Hangover",
@@ -249,7 +249,7 @@ Product.find({}).remove()
       "Price" : 112.30,
       "Stock" : 57,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/ladybird.jpg"
+      "imageUrl1" : "/assets/uploads/product/ladybird.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-7",
       "Title" : "Originals : How Non-Conformists Change the World",
@@ -259,7 +259,7 @@ Product.find({}).remove()
       "Price" : 237.88,
       "Stock" : 38,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/originals.jpg"
+      "imageUrl1" : "/assets/uploads/product/originals.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-8",
       "Title" : "The Kinfolk Home",
@@ -269,7 +269,7 @@ Product.find({}).remove()
       "Price" : 59.38,
       "Stock" : 38,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/kinfolk.jpg"
+      "imageUrl1" : "/assets/uploads/product/kinfolk.jpg"
     }, {
       "ISBN": "ISBN 90-70002-33-9",
       "Title" : "Monochrome Home : Elegant Interiors in Black and White",
@@ -279,7 +279,7 @@ Product.find({}).remove()
       "Price" : 55.73,
       "Stock" : 97,
       "Status" : "Available",
-      "imageUrl" : "/assets/uploads/product/Monochrome.jpg"
+      "imageUrl1" : "/assets/uploads/product/Monochrome.jpg"
     })
     .then(() => {
       console.log('finished populating products');

@@ -78,8 +78,29 @@ function saveFile(res, file) {
 function saveFile(res, file) {
   logger.debug("Product.controller - saveFile function");
   return function(entity){
-    var newPath = '/assets/uploads/product/' + path.basename(file.path);
-    entity.imageUrl = newPath;
+    for (var i = 0; i<file.length; i++) {
+      
+       var newPath = '/assets/uploads/product/' + path.basename(file[i].path);
+       if (i == 0){
+        entity.imageUrl1 = newPath; 
+         logger.debug("Product.controller - simpant file ke entity 1: " + file[i].path);
+       }else if (i == 1){
+        entity.imageUrl2 = newPath; 
+          logger.debug("Product.controller - simpant file ke entity 2: " + file[i].path);
+        }else if (i == 2){
+        entity.imageUrl3 = newPath; 
+          logger.debug("Product.controller - simpant file ke entity 3: " + file[i].path);
+       }else if (i == 3){
+        entity.imageUrl4 = newPath; 
+          logger.debug("Product.controller - simpant file ke entity 4: " + file[i].path);
+       }else if (i == 4){
+        entity.imageUrl5 = newPath; 
+          logger.debug("Product.controller - simpant file ke entity 5: " + file[i].path);
+       };
+    }
+           
+  
+
     logger.debug("Product.controller - entity: " + JSON.stringify(entity));
     logger.debug("Product.controller - imageUrl: " + entity.imageUrl);
     

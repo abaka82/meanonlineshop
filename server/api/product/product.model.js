@@ -16,7 +16,12 @@ var ProductSchema = new mongoose.Schema({
   Price: Number,
   Stock: Number,
   Status: String,
-  imageUrl: String,
+  imageUrl1: String,
+  imageUrl2: String,
+  imageUrl3: String,
+  imageUrl4: String,
+  imageUrl5: String,
+  mainImage: Number,
   CreationDate: {type: Date, default: Date.now}
 });
 

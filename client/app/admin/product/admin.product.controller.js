@@ -129,6 +129,26 @@ $scope.searchKeyword = { Title: '', Author: '', Category:'', Stock:'' };
          $scope.idSelectedVote = idSelectedVote;
       };
 
+    $scope.removePreview = function(item) { 
+     $scope.product.picture.splice(item, 1);     
+    }
+
+    $scope.setPrimary = function(item) { 
+     if (item == 1){
+       $scope.form.primary1.show = true;    
+     }else if(item == 2){
+       $scope.primary2.show = true; 
+     }else if(item == 3){
+       $scope.primary3.show = true; 
+     }else if(item == 4){
+       $scope.primary4.show = true; 
+     }else if(item == 5){
+       $scope.primary5.show = true; 
+     };
+
+     $scope.product.mainImage = item;     
+    }
+
        $scope.doCheck = function () {
         if ($scope.product.Stock > 0) {
             $scope.product.Status = "Available";

@@ -39,7 +39,8 @@
             <div class="ibox">
                 <div class="ibox-content product-box">
                     <div class="product-imitation" ng-mouseover="hoverIn();myClass = 'product-name  fadeInUp blur animated caption-text'" ng-mouseleave="hoverOut();myClass = 'product-name blur caption-text animated fadeOutDown'">
-                    <img src="{{product.imageUrl}}" alt="{{product.Iitle}}" class="img-responsive makecenter">
+                    <img src="{{product.imageUrl1}}" alt="{{product.Iitle}}" ng-show="product.mainImage == 1" class="img-responsive makecenter">
+                    <img src="{{product.imageUrl2}}" alt="{{product.Iitle}}" ng-show="product.mainImage == 2" class="img-responsive makecenter">
                       <span  ng-show="hoverTitle" ng-class="myClass" > 
                           <a  ui-sref="commerce.product_details({id : product._id})" style="color:gainsboro;">
                           {{product.Title}}
